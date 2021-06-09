@@ -115,6 +115,5 @@ C:\Users\Alexis\Desktop\Programacion web I\Proyectos\Proyecto_PrograWebI\Registr
 C:\Users\Alexis\Desktop\Programacion web I\Proyectos\Proyecto_PrograWebI\RegistroEventosUSAM\RegistroEventosUSAM\bin\es\System.Web.WebPages.resources.dll
 C:\Users\Alexis\Desktop\Programacion web I\Proyectos\Proyecto_PrograWebI\RegistroEventosUSAM\RegistroEventosUSAM\bin\es\System.Web.WebPages.Deployment.resources.dll
 C:\Users\Alexis\Desktop\Programacion web I\Proyectos\Proyecto_PrograWebI\RegistroEventosUSAM\RegistroEventosUSAM\bin\es\System.Web.WebPages.Razor.resources.dll
-C:\Users\Alexis\Desktop\Programacion web I\Proyectos\Proyecto_PrograWebI\RegistroEventosUSAM\RegistroEventosUSAM\obj\Debug\RegistroEventosUSAM.csprojResolveAssemblyReference.cache
 C:\Users\Alexis\Desktop\Programacion web I\Proyectos\Proyecto_PrograWebI\RegistroEventosUSAM\RegistroEventosUSAM\obj\Debug\RegistroEventosUSAM.dll
 C:\Users\Alexis\Desktop\Programacion web I\Proyectos\Proyecto_PrograWebI\RegistroEventosUSAM\RegistroEventosUSAM\obj\Debug\RegistroEventosUSAM.pdb
