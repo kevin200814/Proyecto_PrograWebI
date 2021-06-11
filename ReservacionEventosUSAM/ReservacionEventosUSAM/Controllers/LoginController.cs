@@ -44,7 +44,7 @@ namespace ReservacionEventosUSAM.Controllers
                         Session["Usuario"] = usr;
                         Session["Usr"] = user;
                     }
-                    return RedirectToAction("Panel", "Home");
+                    return RedirectToAction("ConsultarEventos", "Eventos");
                 }
             }
             catch (Exception e)
@@ -58,7 +58,7 @@ namespace ReservacionEventosUSAM.Controllers
         public ActionResult Salir()
         {
             Session.Clear();
-            return RedirectToAction("Index", "Login");
+            return RedirectToAction("Index", "Home");
         }
     }
 }

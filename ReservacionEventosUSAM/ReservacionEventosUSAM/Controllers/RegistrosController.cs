@@ -22,7 +22,7 @@ namespace ReservacionEventosUSAM.Controllers
         public ActionResult Salir()
         {
             Session.Clear();
-            return RedirectToAction("Index", "Login");
+            return RedirectToAction("Index", "Home");
         }
     }
 }

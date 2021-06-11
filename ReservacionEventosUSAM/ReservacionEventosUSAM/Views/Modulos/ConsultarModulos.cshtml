@@ -1,6 +1,6 @@
 ﻿
 @{
-    ViewBag.Title = "ConsultarPersonas";
+    ViewBag.Title = "ConsultarModulos";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
@@ -13,13 +13,13 @@
 
         <ul class="nav nav-tabs card-header-tabs">
             <li class="nav-item">
-                <a class="nav-link" aria-current="true" href="@Url.Content("~/Eventos/ConsultarEventos")">Eventos <i class="bi bi-calendar2-event-fill"></i></a>
+                <a class="nav-link " aria-current="true" href="@Url.Content("~/Eventos/ConsultarEventos")">Eventos <i class="bi bi-calendar2-event-fill"></i></a>
             </li>
             <li class="nav-item">
                 <a class="nav-link" href="@Url.Content("~/Lugares/ConsultarLugares")">Lugares <i class="bi bi-geo-alt-fill"></i></a>
             </li>
-            <li class="nav-item active">
-                <a class="nav-link active" href="@Url.Content("~/Personas/ConsultarPersonas")">Personas <i class="bi bi-people-fill"></i></a>
+            <li class="nav-item">
+                <a class="nav-link " href="@Url.Content("~/Personas/ConsultarPersonas")">Personas <i class="bi bi-people-fill"></i></a>
             </li>
             <li class="nav-item">
                 <a class="nav-link " href="@Url.Content("~/Usuarios/ConsultarUsuarios")">Usuarios <i class="bi bi-people-fill"></i></a>
@@ -34,7 +34,7 @@
                 <a class="nav-link" href="@Url.Content("~/Operaciones/ConsultarOperacion")">operaciones<i class="bi bi-person-bounding-box"></i></a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="@Url.Content("~/Modulos/ConsultarModulos")">Modulos<i class="bi bi-person-bounding-box"></i></a>
+                <a class="nav-link active" href="@Url.Content("~/Modulos/ConsultarModulos")">Modulos<i class="bi bi-person-bounding-box"></i></a>
             </li>
             <li class="nav-item">
                 <a class="nav-link" href="@Url.Content("~/Tipo_evento/ConsultarTipoEvento")">Tipo evento <i class="bi bi-calendar2-event"></i></a>
@@ -45,10 +45,10 @@
             <li class="nav-item">
                 <a class="nav-link" href="@Url.Content("~/Registros/ConsultarRegistro")">Registros <i class="bi bi-person-lines-fill"></i></a>
             </li>
-
             <li class="nav-item">
                 <a class="nav-link" href="@Url.Content("~/Roles/ConsultarRoles")">Roles <i class="bi bi-toggle2-on"></i></a>
             </li>
+
         </ul>
     </div>
 
@@ -57,25 +57,22 @@
 
         <div class="table-responsive">
             <!--Boton de agregar-->
-            <button class="btn btn-info float-start text-light" onclick="document.location.href='@Url.Content("~/Personas/AgregarPersonas")'">Nueva Persona</button>
+            <button class="btn btn-info float-start text-light" onclick="document.location.href='@Url.Content("~/Modulos/AgregarModulo")'">Nuevo Modulo</button>
             <br />
             <!-- Aquí va la tabla ¡No olviden poner el id a la tabla!-->
             <table id="table" class="table">
                 <thead>
                     <tr>
                         <th scope="col">#</th>
-                        <th scope="col">Nombres</th>
-                        <th scope="col">Apellidos</th>
-                        <th scope="col">Profesion</th>
+                        <th scope="col">Nombre</th>
                         <th scope="col">Acciones</th>
                     </tr>
                 </thead>
-                <tbody> 
+                <tbody>
                     <tr>
                         <th scope="row">3</th>
                         <td>Juan</td>
-                        <td>Rivera</td>
-                        <td>7172-9900</td>
+                        
                         <td>
                             <button class="btn btn-primary"><i class="bi bi-pencil-square"></i></button>
                             <button class="btn btn-danger"><i class="bi bi-trash"></i></button>

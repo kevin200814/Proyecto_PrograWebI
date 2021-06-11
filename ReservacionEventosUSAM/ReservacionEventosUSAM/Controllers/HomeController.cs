@@ -14,15 +14,12 @@ namespace ReservacionEventosUSAM.Controllers
             return View();
         }
 
-        public ActionResult Panel()
-        {
-            return View();
-        }
+
 
         public ActionResult Salir()
         {
             Session.Clear();
-            return RedirectToAction("Index", "Login");
+            return RedirectToAction("Index", "Home");
         }
     }
 }
