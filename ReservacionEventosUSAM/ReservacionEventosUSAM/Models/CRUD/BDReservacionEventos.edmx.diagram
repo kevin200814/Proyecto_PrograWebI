@@ -5,29 +5,29 @@
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
       <Diagram DiagramId="da209120168845f9a1fdf65b8766aad9" Name="Diagram1">
-        <EntityTypeShape EntityType="ReservacionEventos2021Model.local_evento" Width="1.5" PointX="0.75" PointY="3.5" IsExpanded="true" />
-        <EntityTypeShape EntityType="ReservacionEventos2021Model.modulos" Width="1.5" PointX="3.5" PointY="16" IsExpanded="true" />
-        <EntityTypeShape EntityType="ReservacionEventos2021Model.operaciones" Width="1.5" PointX="5.75" PointY="15.875" IsExpanded="true" />
-        <EntityTypeShape EntityType="ReservacionEventos2021Model.persona_eventos" Width="1.5" PointX="0.75" PointY="6" IsExpanded="true" />
-        <EntityTypeShape EntityType="ReservacionEventos2021Model.registro_inscripcion" Width="1.5" PointX="5.25" PointY="2.875" IsExpanded="true" />
-        <EntityTypeShape EntityType="ReservacionEventos2021Model.reservacion_evento" Width="1.5" PointX="3" PointY="2.25" IsExpanded="true" />
-        <EntityTypeShape EntityType="ReservacionEventos2021Model.rol_opera" Width="1.5" PointX="8" PointY="8.875" IsExpanded="true" />
-        <EntityTypeShape EntityType="ReservacionEventos2021Model.roles" Width="1.5" PointX="5.75" PointY="8.875" IsExpanded="true" />
-        <EntityTypeShape EntityType="ReservacionEventos2021Model.sysdiagrams" Width="1.5" PointX="7.75" PointY="2" IsExpanded="true" />
-        <EntityTypeShape EntityType="ReservacionEventos2021Model.tipo_evento" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="ReservacionEventos2021Model.tipo_persona" Width="1.5" PointX="3" PointY="8.375" IsExpanded="true" />
-        <EntityTypeShape EntityType="ReservacionEventos2021Model.userState" Width="1.5" PointX="5.75" PointY="13" IsExpanded="true" />
-        <EntityTypeShape EntityType="ReservacionEventos2021Model.usuarios" Width="1.5" PointX="8" PointY="5.625" IsExpanded="true" />
-        <AssociationConnector Association="ReservacionEventos2021Model.FK__reservaci__id_lo__3B75D760" ManuallyRouted="false" />
-        <AssociationConnector Association="ReservacionEventos2021Model.FK__operacion__codmo__4222D4EF" ManuallyRouted="false" />
-        <AssociationConnector Association="ReservacionEventos2021Model.FK__rol_opera__codop__3F466844" ManuallyRouted="false" />
-        <AssociationConnector Association="ReservacionEventos2021Model.FK__reservaci__id_pe__3A81B327" ManuallyRouted="false" />
-        <AssociationConnector Association="ReservacionEventos2021Model.FK__registro___id_re__3C69FB99" ManuallyRouted="false" />
-        <AssociationConnector Association="ReservacionEventos2021Model.FK__registro___id_ti__3D5E1FD2" ManuallyRouted="false" />
-        <AssociationConnector Association="ReservacionEventos2021Model.FK__reservaci__id_ti__398D8EEE" ManuallyRouted="false" />
-        <AssociationConnector Association="ReservacionEventos2021Model.FK__rol_opera__id_ro__3E52440B" ManuallyRouted="false" />
-        <AssociationConnector Association="ReservacionEventos2021Model.FK__usuarios__id_rol__37A5467C" ManuallyRouted="false" />
-        <AssociationConnector Association="ReservacionEventos2021Model.FK__usuarios__cod_es__38996AB5" ManuallyRouted="false" />
+        <EntityTypeShape EntityType="ReservacionEventos2021Model.local_evento" Width="1.5" PointX="0.75" PointY="0.75" />
+        <EntityTypeShape EntityType="ReservacionEventos2021Model.modulos" Width="1.5" PointX="3.5" PointY="16" />
+        <EntityTypeShape EntityType="ReservacionEventos2021Model.operaciones" Width="1.5" PointX="5.75" PointY="15.875" />
+        <EntityTypeShape EntityType="ReservacionEventos2021Model.persona_eventos" Width="1.5" PointX="0.75" PointY="3.25" />
+        <EntityTypeShape EntityType="ReservacionEventos2021Model.registro_inscripcion" Width="1.5" PointX="5.25" PointY="2.875" />
+        <EntityTypeShape EntityType="ReservacionEventos2021Model.reservacion_evento" Width="1.5" PointX="3" PointY="2.25" />
+        <EntityTypeShape EntityType="ReservacionEventos2021Model.rol_opera" Width="1.5" PointX="8" PointY="8.875" />
+        <EntityTypeShape EntityType="ReservacionEventos2021Model.roles" Width="1.5" PointX="5.75" PointY="8.875" />
+        <EntityTypeShape EntityType="ReservacionEventos2021Model.sysdiagrams" Width="1.5" PointX="7.75" PointY="2" />
+        <EntityTypeShape EntityType="ReservacionEventos2021Model.tipo_evento" Width="1.5" PointX="0.75" PointY="6.25" />
+        <EntityTypeShape EntityType="ReservacionEventos2021Model.tipo_persona" Width="1.5" PointX="3" PointY="8.375" />
+        <EntityTypeShape EntityType="ReservacionEventos2021Model.userState" Width="1.5" PointX="5.75" PointY="13" />
+        <EntityTypeShape EntityType="ReservacionEventos2021Model.usuarios" Width="1.5" PointX="8" PointY="5.625" />
+        <AssociationConnector Association="ReservacionEventos2021Model.FK__reservaci__id_lo__3B75D760" />
+        <AssociationConnector Association="ReservacionEventos2021Model.FK__operacion__codmo__4222D4EF" />
+        <AssociationConnector Association="ReservacionEventos2021Model.FK__rol_opera__codop__3F466844" />
+        <AssociationConnector Association="ReservacionEventos2021Model.FK__reservaci__id_pe__3A81B327" />
+        <AssociationConnector Association="ReservacionEventos2021Model.FK__registro___id_re__3C69FB99" />
+        <AssociationConnector Association="ReservacionEventos2021Model.FK__registro___id_ti__3D5E1FD2" />
+        <AssociationConnector Association="ReservacionEventos2021Model.FK__reservaci__id_ti__398D8EEE" />
+        <AssociationConnector Association="ReservacionEventos2021Model.FK__rol_opera__id_ro__3E52440B" />
+        <AssociationConnector Association="ReservacionEventos2021Model.FK__usuarios__id_rol__37A5467C" />
+        <AssociationConnector Association="ReservacionEventos2021Model.FK__usuarios__cod_es__38996AB5" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

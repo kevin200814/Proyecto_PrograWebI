@@ -98,7 +98,7 @@
       <PropertyRef Name="id_tipo_persona" />
     </Key>
     <Property Name="id_tipo_persona" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-    <Property Name="tipo_persona" Type="int" Nullable="false" />
+    <Property Name="tipo_persona" Type="varchar" MaxLength="50" Nullable="false" />
     <Property Name="costo_pago_evento" Type="money" Nullable="false" />
   </EntityType>
   <EntityType Name="userState">

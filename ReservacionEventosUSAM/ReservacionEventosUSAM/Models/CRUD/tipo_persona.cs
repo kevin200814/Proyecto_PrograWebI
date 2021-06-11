@@ -21,7 +21,7 @@ namespace ReservacionEventosUSAM.Models.CRUD
         }
     
         public int id_tipo_persona { get; set; }
-        public int tipo_persona1 { get; set; }
+        public string tipo_persona1 { get; set; }
         public decimal costo_pago_evento { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
