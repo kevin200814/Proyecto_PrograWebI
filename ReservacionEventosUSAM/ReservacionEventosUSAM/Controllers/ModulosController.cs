@@ -6,15 +6,15 @@ using System.Web.Mvc;
 
 namespace ReservacionEventosUSAM.Controllers
 {
-    public class RolesController : Controller
+    public class ModulosController : Controller
     {
-        // GET: Roles
+        // GET: Modulos
         public ActionResult Index()
         {
             return View();
         }
 
-        public ActionResult ConsultarRoles()
+        public ActionResult ConsultarModulos()
         {
             return View();
         }
