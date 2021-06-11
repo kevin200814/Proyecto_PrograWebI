@@ -1,0 +1,29 @@
+﻿@model ReservacionEventosUSAM.Models.CRUD.Rol_OperacrudUpdate
+@{
+    ViewBag.Title = "Actualizar Rol Operacion";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@using (Html.BeginForm("ActualizarRolOpera", "RolOpera", FormMethod.Post, new { role = "form", @class = "" }))
+{
+    <div class="card">
+        <div class="card-header">
+            <h3>Agregar operacion</h3>
+        </div>
+        <div class="card-body">
+            @Html.HiddenFor(d => d.id_rol_opera)
+
+            @Html.AntiForgeryToken()
+
+            @Html.LabelFor(d => d.id_rol)
+            @Html.TextBoxFor(d => d.id_rol, new { @class = "form-control" })
+
+            @Html.LabelFor(d => d.codopera)
+            @Html.TextBoxFor(d => d.codopera, new { @class = "form-control" })
+        </div>
+        <div class="card-footer">
+            <input type="submit" class="btn btn-success" value="Guardar" />
+            <a class="btn btn-danger" href="@Url.Content("~/RolOpera/ConsultarRolOpera/")">Cancelar</a>
+        </div>
+    </div>
+}

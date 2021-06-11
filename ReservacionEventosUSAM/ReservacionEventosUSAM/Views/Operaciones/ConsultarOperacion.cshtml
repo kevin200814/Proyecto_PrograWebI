@@ -1,4 +1,4 @@
-﻿
+﻿@model List<ReservacionEventosUSAM.Models.CRUD.OPERACIONvista>
 @{
     ViewBag.Title = "ConsultarOperacion";
     Layout = "~/Views/Shared/_Layout.cshtml";
@@ -70,17 +70,18 @@
                     </tr>
                 </thead>
                 <tbody>
-                  
-                    <tr>
-                        <th scope="row">3</th>
-                        <td>Juan</td>
-                        <td>Rivera</td>
-                       
-                        <td>
-                            <button class="btn btn-primary"><i class="bi bi-pencil-square"></i></button>
-                            <button class="btn btn-danger"><i class="bi bi-trash"></i></button>
-                        </td>
-                    </tr>
+                    @foreach (var obj in Model)
+                    {
+                        <tr>
+                            <td>@obj.codopera</td>
+                            <td>@obj.nomopera</td>
+                            <td>@obj.codmod </td>
+                            <td>
+                                <a class="btn btn-primary" href="@Url.Content("~/Operaciones/ActualizarOperacion/"+obj.codopera)"><i class="bi bi-pencil-square"></i></a>
+                                <a class="btn btn-danger" href="@Url.Content("~/Operaciones/Delete/"+obj.codopera)"><i class="bi bi-trash"></i></a>
+                            </td>
+                        </tr>
+                    }
                 </tbody>
             </table>
             <!-- Aquí termina la tabla -->

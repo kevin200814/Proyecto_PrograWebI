@@ -1,4 +1,4 @@
-﻿
+﻿@model List<ReservacionEventosUSAM.Models.CRUD.MODULOSvista>
 @{
     ViewBag.Title = "ConsultarModulos";
     Layout = "~/Views/Shared/_Layout.cshtml";
@@ -69,15 +69,17 @@
                     </tr>
                 </thead>
                 <tbody>
-                    <tr>
-                        <th scope="row">3</th>
-                        <td>Juan</td>
-                        
-                        <td>
-                            <button class="btn btn-primary"><i class="bi bi-pencil-square"></i></button>
-                            <button class="btn btn-danger"><i class="bi bi-trash"></i></button>
-                        </td>
-                    </tr>
+                    @foreach (var obj in Model)
+                    {
+                        <tr>
+                            <td>@obj.codmod</td>
+                            <td>@obj.nombre</td>
+                            <td>
+                                <a class="btn btn-primary" href="@Url.Content("~/Modulos/ActualizarModulo/"+obj.codmod)"><i class="bi bi-pencil-square"></i></a>
+                                <a class="btn btn-danger" href="@Url.Content("~/Modulos/Delete/"+obj.codmod)"><i class="bi bi-trash"></i></a>
+                            </td>
+                        </tr>
+                    }
                 </tbody>
             </table>
             <!-- Aquí termina la tabla -->
