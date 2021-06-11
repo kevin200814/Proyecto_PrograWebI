@@ -1,0 +1,70 @@
+﻿
+@{
+    ViewBag.Title = "Ingresar";
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>IniciarSesion</title>
+    <link href="~/Content/Style.css" rel="stylesheet" />
+    <link href="~/Content/bootstrap.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css">
+    <link href="~/Content/dataTables.bootstrap4.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
+</head>
+<style>
+    .caja {
+        background: #DBD4D4;
+        border-radius: 5px;
+        width: 35%;
+        height: 35%;
+        box-shadow: 5px 10px #888888;
+    }
+
+    .caja {
+        padding: 12px;
+    }
+
+    .caja {
+        transform:translate(0,30px)
+    }
+
+    .boton {
+        width: 100%;
+    }
+</style>
+
+<body>
+    <div class="container caja">
+        <center>
+            <h2>Iniciar Sesion</h2>
+        </center>
+        
+        <form action="@Url.Content("~/Login/Ingresar")" method="post" id="login-form" class="login-form" autocomplete="off" role="main">
+            <div class="col-md-12">
+                <img src="~/images/avatardefault.png" style="width:auto;height:150px;display:block;margin-left: auto;margin-right: auto;" />
+            </div><br />
+            <div class="col-md-12">
+                <!--Entrada de usuario-->
+                <label for="txtUsuario">Usuario:</label>
+                <input type="text" name="user" class="form-control" />
+                <br />
+                <!--Entrada de contraseña-->
+                <label for="txtContrasena">Contraseña:</label>
+                <input type="password" name="password" class="form-control" />
+                <br />
+                <button type="submit" class="btn btn-primary boton">Entrar</button>
+                <br />
+                <br />
+                @Html.ActionLink("Regresar", "Salir", "CerrarSesion", new { @class = "btn btn-success boton" })
+            </div>
+        </form>
+    </div>
+    <br />
+
+</body>
+</html>
