@@ -202,6 +202,7 @@
     <Content Include="scripts\jquery-1.10.2.js" />
     <Content Include="scripts\jquery-1.10.2.min.js" />
     <Content Include="scripts\modernizr-2.6.2.js" />
+    <Content Include="Views\feed.html" />
     <Content Include="Web.config" />
     <Content Include="Views\Login\Ingresar.cshtml" />
     <Content Include="Views\Login\Index.cshtml" />
@@ -250,9 +251,17 @@
     <Compile Include="Models\CRUD\modulos.cs">
       <DependentUpon>BDReservacionEventos.tt</DependentUpon>
     </Compile>
+    <Compile Include="Models\CRUD\Moduloscrud.cs" />
+    <Compile Include="Models\CRUD\ModulosInsert.cs" />
+    <Compile Include="Models\CRUD\MODULOSvista.cs" />
+    <Compile Include="Models\CRUD\ModuloUpdate.cs" />
+    <Compile Include="Models\CRUD\Operacioncrud.cs" />
     <Compile Include="Models\CRUD\operaciones.cs">
       <DependentUpon>BDReservacionEventos.tt</DependentUpon>
     </Compile>
+    <Compile Include="Models\CRUD\OperacionInsert.cs" />
+    <Compile Include="Models\CRUD\OperacionUpdate.cs" />
+    <Compile Include="Models\CRUD\OPERACIONvista.cs" />
     <Compile Include="Models\CRUD\persona_eventos.cs">
       <DependentUpon>BDReservacionEventos.tt</DependentUpon>
     </Compile>
@@ -268,6 +277,10 @@
     <Compile Include="Models\CRUD\rol_opera.cs">
       <DependentUpon>BDReservacionEventos.tt</DependentUpon>
     </Compile>
+    <Compile Include="Models\CRUD\Rol_Operacrud.cs" />
+    <Compile Include="Models\CRUD\Rol_OperacrudInsert.cs" />
+    <Compile Include="Models\CRUD\Rol_OperacrudUpdate.cs" />
+    <Compile Include="Models\CRUD\ROL_OPERAvista.cs" />
     <Compile Include="Models\CRUD\sysdiagrams.cs">
       <DependentUpon>BDReservacionEventos.tt</DependentUpon>
     </Compile>
@@ -308,6 +321,12 @@
     <Content Include="Views\RolOpera\ConsultarRolOpera.cshtml" />
     <Content Include="Views\Operaciones\ConsultarOperacion.cshtml" />
     <Content Include="Views\Modulos\ConsultarModulos.cshtml" />
+    <Content Include="Views\Modulos\AgregarModulo.cshtml" />
+    <Content Include="Views\Modulos\ActualizarModulo.cshtml" />
+    <Content Include="Views\Operaciones\AgregarOperacion.cshtml" />
+    <Content Include="Views\Operaciones\ActualizarOperacion.cshtml" />
+    <Content Include="Views\RolOpera\AgregarRolOpera.cshtml" />
+    <Content Include="Views\RolOpera\ActualizarRolOpera.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

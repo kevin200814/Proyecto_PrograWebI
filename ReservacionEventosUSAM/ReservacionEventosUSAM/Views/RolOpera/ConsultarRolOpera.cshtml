@@ -1,4 +1,4 @@
-﻿
+﻿@model List<ReservacionEventosUSAM.Models.CRUD.ROL_OPERAvista>
 @{
     ViewBag.Title = "ConsultarRolOpera";
     Layout = "~/Views/Shared/_Layout.cshtml";
@@ -64,21 +64,24 @@
                 <thead>
                     <tr>
                         <th scope="col">#</th>
-                        <th scope="col">Rol</th>
+                        <th scope="col">ID Rol</th>
                         <th scope="col">Cod Opera</th>
                         <th scope="col">Acciones</th>
                     </tr>
                 </thead>
                 <tbody>
-                    <tr>
-                        <th scope="row">3</th>
-                        <td>Juan</td>
-                        <td>Rivera</td>
-                        <td>
-                            <button class="btn btn-primary"><i class="bi bi-pencil-square"></i></button>
-                            <button class="btn btn-danger"><i class="bi bi-trash"></i></button>
-                        </td>
-                    </tr>
+                    @foreach (var obj in Model)
+                    {
+                        <tr>
+                            <td>@obj.id_rol_opera</td>
+                            <td>@obj.id_rol</td>
+                            <td>@obj.codopera </td>
+                            <td>
+                                <a class="btn btn-primary" href="@Url.Content("~/RolOpera/ActualizarRolOpera/"+obj.id_rol_opera)"><i class="bi bi-pencil-square"></i></a>
+                                <a class="btn btn-danger" href="@Url.Content("~/RolOpera/Delete/"+obj.id_rol_opera)"><i class="bi bi-trash"></i></a>
+                            </td>
+                        </tr>
+                    }
                 </tbody>
             </table>
             <!-- Aquí termina la tabla -->
