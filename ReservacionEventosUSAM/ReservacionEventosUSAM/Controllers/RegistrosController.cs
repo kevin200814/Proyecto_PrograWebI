@@ -6,20 +6,15 @@ using System.Web.Mvc;
 
 namespace ReservacionEventosUSAM.Controllers
 {
-    public class EventosController : Controller
+    public class RegistrosController : Controller
     {
-        // GET: Eventos
+        // GET: Registros
         public ActionResult Index()
         {
             return View();
         }
 
-        public ActionResult Feed()
-        {
-            return View();
-        }
-
-        public ActionResult ConsultarEventos()
+        public ActionResult ConsultarRegistro()
         {
             return View();
         }

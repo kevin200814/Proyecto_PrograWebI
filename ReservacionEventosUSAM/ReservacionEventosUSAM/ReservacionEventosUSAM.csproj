@@ -148,6 +148,7 @@
     <Content Include="Global.asax" />
     <Content Include="images\avatardefault.png" />
     <Content Include="images\LOGO_USAM.png" />
+    <Content Include="images\señal.png" />
     <Content Include="Models\CRUD\BDReservacionEventos.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <DependentUpon>BDReservacionEventos.edmx</DependentUpon>
@@ -210,9 +211,17 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\ErrorController.cs" />
     <Compile Include="Controllers\EventosController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\LoginController.cs" />
+    <Compile Include="Controllers\LugaresController.cs" />
+    <Compile Include="Controllers\PersonasController.cs" />
+    <Compile Include="Controllers\RegistrosController.cs" />
+    <Compile Include="Controllers\RolesController.cs" />
+    <Compile Include="Controllers\Tipo_eventoController.cs" />
+    <Compile Include="Controllers\Tipo_personaController.cs" />
+    <Compile Include="Filter\Autoriza.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -281,6 +290,14 @@
     <Content Include="Views\_ViewStart.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
     <Content Include="scripts\jquery-1.10.2.min.map" />
+    <Content Include="Views\Error\noAutorizado.cshtml" />
+    <Content Include="Views\Eventos\ConsultarEventos.cshtml" />
+    <Content Include="Views\Lugares\ConsultarLugares.cshtml" />
+    <Content Include="Views\Tipo_evento\ConsultarTipoEvento.cshtml" />
+    <Content Include="Views\Tipo_persona\ConsultarTipoPersona.cshtml" />
+    <Content Include="Views\Registros\ConsultarRegistro.cshtml" />
+    <Content Include="Views\Roles\ConsultarRoles.cshtml" />
+    <Content Include="Views\Personas\ConsultarPersonas.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

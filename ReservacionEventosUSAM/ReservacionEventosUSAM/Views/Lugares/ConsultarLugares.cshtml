@@ -1,9 +1,8 @@
 ﻿
 @{
-    ViewBag.Title = "Panel";
+    ViewBag.Title = "ConsultarLugares";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
-
 
 <h2>panel de administración</h2>
 <div class="card text-center">
@@ -14,10 +13,10 @@
 
         <ul class="nav nav-tabs card-header-tabs">
             <li class="nav-item">
-                <a class="nav-link active" aria-current="true" href="@Url.Content("~/Eventos/ConsultarEventos")">Eventos <i class="bi bi-calendar2-event-fill"></i></a>
+                <a class="nav-link" aria-current="true" href="@Url.Content("~/Eventos/ConsultarEventos")">Eventos <i class="bi bi-calendar2-event-fill"></i></a>
             </li>
-            <li class="nav-item">
-                <a class="nav-link" href="@Url.Content("~/Lugares/ConsultarLugares")">Lugares <i class="bi bi-geo-alt-fill"></i></a>
+            <li class="nav-item ">
+                <a class="nav-link active" href="@Url.Content("~/Lugares/ConsultarLugares")">Lugares <i class="bi bi-geo-alt-fill"></i></a>
             </li>
             <li class="nav-item">
                 <a class="nav-link " href="@Url.Content("~/Personas/ConsultarPersonas")">Personas <i class="bi bi-people-fill"></i></a>
@@ -102,3 +101,4 @@
 
     </div>
 </div>
+
