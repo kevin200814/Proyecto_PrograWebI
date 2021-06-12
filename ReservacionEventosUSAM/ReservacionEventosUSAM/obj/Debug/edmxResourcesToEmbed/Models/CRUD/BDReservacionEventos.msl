@@ -4,131 +4,131 @@
     <EntitySetMapping Name="local_evento">
       <EntityTypeMapping TypeName="ReservacionEventos2021Model.local_evento">
         <MappingFragment StoreEntitySet="local_evento">
-          <ScalarProperty Name="id_local" ColumnName="id_local" />
           <ScalarProperty Name="nombre_local" ColumnName="nombre_local" />
+          <ScalarProperty Name="id_local" ColumnName="id_local" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="modulos">
       <EntityTypeMapping TypeName="ReservacionEventos2021Model.modulos">
         <MappingFragment StoreEntitySet="modulos">
-          <ScalarProperty Name="codmod" ColumnName="codmod" />
           <ScalarProperty Name="nombre" ColumnName="nombre" />
+          <ScalarProperty Name="codmod" ColumnName="codmod" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="operaciones">
       <EntityTypeMapping TypeName="ReservacionEventos2021Model.operaciones">
         <MappingFragment StoreEntitySet="operaciones">
-          <ScalarProperty Name="codopera" ColumnName="codopera" />
-          <ScalarProperty Name="nomopera" ColumnName="nomopera" />
           <ScalarProperty Name="codmod" ColumnName="codmod" />
+          <ScalarProperty Name="nomopera" ColumnName="nomopera" />
+          <ScalarProperty Name="codopera" ColumnName="codopera" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="persona_eventos">
       <EntityTypeMapping TypeName="ReservacionEventos2021Model.persona_eventos">
         <MappingFragment StoreEntitySet="persona_eventos">
-          <ScalarProperty Name="id_persona" ColumnName="id_persona" />
-          <ScalarProperty Name="nombres_persona" ColumnName="nombres_persona" />
-          <ScalarProperty Name="apellidos_persona" ColumnName="apellidos_persona" />
           <ScalarProperty Name="profesion_persona" ColumnName="profesion_persona" />
+          <ScalarProperty Name="apellidos_persona" ColumnName="apellidos_persona" />
+          <ScalarProperty Name="nombres_persona" ColumnName="nombres_persona" />
+          <ScalarProperty Name="id_persona" ColumnName="id_persona" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="registro_inscripcion">
       <EntityTypeMapping TypeName="ReservacionEventos2021Model.registro_inscripcion">
         <MappingFragment StoreEntitySet="registro_inscripcion">
-          <ScalarProperty Name="id_inscripcion" ColumnName="id_inscripcion" />
-          <ScalarProperty Name="id_reservacion" ColumnName="id_reservacion" />
-          <ScalarProperty Name="nombres_persona" ColumnName="nombres_persona" />
-          <ScalarProperty Name="apellidos_persona" ColumnName="apellidos_persona" />
-          <ScalarProperty Name="telefono_persona" ColumnName="telefono_persona" />
-          <ScalarProperty Name="correo_persona" ColumnName="correo_persona" />
           <ScalarProperty Name="id_tipo_persona" ColumnName="id_tipo_persona" />
+          <ScalarProperty Name="correo_persona" ColumnName="correo_persona" />
+          <ScalarProperty Name="telefono_persona" ColumnName="telefono_persona" />
+          <ScalarProperty Name="apellidos_persona" ColumnName="apellidos_persona" />
+          <ScalarProperty Name="nombres_persona" ColumnName="nombres_persona" />
+          <ScalarProperty Name="id_reservacion" ColumnName="id_reservacion" />
+          <ScalarProperty Name="id_inscripcion" ColumnName="id_inscripcion" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="reservacion_evento">
       <EntityTypeMapping TypeName="ReservacionEventos2021Model.reservacion_evento">
         <MappingFragment StoreEntitySet="reservacion_evento">
-          <ScalarProperty Name="id_reservacion" ColumnName="id_reservacion" />
-          <ScalarProperty Name="titulo_evento" ColumnName="titulo_evento" />
-          <ScalarProperty Name="fecha_evento" ColumnName="fecha_evento" />
-          <ScalarProperty Name="inicio_hora_evento" ColumnName="inicio_hora_evento" />
-          <ScalarProperty Name="fin_hora_evento" ColumnName="fin_hora_evento" />
-          <ScalarProperty Name="duracion_evento" ColumnName="duracion_evento" />
-          <ScalarProperty Name="descripcion_evento" ColumnName="descripcion_evento" />
-          <ScalarProperty Name="id_tipo_evento" ColumnName="id_tipo_evento" />
-          <ScalarProperty Name="id_persona" ColumnName="id_persona" />
-          <ScalarProperty Name="id_local" ColumnName="id_local" />
-          <ScalarProperty Name="estado_evento" ColumnName="estado_evento" />
           <ScalarProperty Name="tipo_persona" ColumnName="tipo_persona" />
+          <ScalarProperty Name="estado_evento" ColumnName="estado_evento" />
+          <ScalarProperty Name="id_local" ColumnName="id_local" />
+          <ScalarProperty Name="id_persona" ColumnName="id_persona" />
+          <ScalarProperty Name="id_tipo_evento" ColumnName="id_tipo_evento" />
+          <ScalarProperty Name="descripcion_evento" ColumnName="descripcion_evento" />
+          <ScalarProperty Name="duracion_evento" ColumnName="duracion_evento" />
+          <ScalarProperty Name="fin_hora_evento" ColumnName="fin_hora_evento" />
+          <ScalarProperty Name="inicio_hora_evento" ColumnName="inicio_hora_evento" />
+          <ScalarProperty Name="fecha_evento" ColumnName="fecha_evento" />
+          <ScalarProperty Name="titulo_evento" ColumnName="titulo_evento" />
+          <ScalarProperty Name="id_reservacion" ColumnName="id_reservacion" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="rol_opera">
       <EntityTypeMapping TypeName="ReservacionEventos2021Model.rol_opera">
         <MappingFragment StoreEntitySet="rol_opera">
-          <ScalarProperty Name="id_rol_opera" ColumnName="id_rol_opera" />
-          <ScalarProperty Name="id_rol" ColumnName="id_rol" />
           <ScalarProperty Name="codopera" ColumnName="codopera" />
+          <ScalarProperty Name="id_rol" ColumnName="id_rol" />
+          <ScalarProperty Name="id_rol_opera" ColumnName="id_rol_opera" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="roles">
       <EntityTypeMapping TypeName="ReservacionEventos2021Model.roles">
         <MappingFragment StoreEntitySet="roles">
-          <ScalarProperty Name="id_rol" ColumnName="id_rol" />
           <ScalarProperty Name="rol" ColumnName="rol" />
+          <ScalarProperty Name="id_rol" ColumnName="id_rol" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="sysdiagrams">
       <EntityTypeMapping TypeName="ReservacionEventos2021Model.sysdiagrams">
         <MappingFragment StoreEntitySet="sysdiagrams">
-          <ScalarProperty Name="name" ColumnName="name" />
-          <ScalarProperty Name="principal_id" ColumnName="principal_id" />
-          <ScalarProperty Name="diagram_id" ColumnName="diagram_id" />
-          <ScalarProperty Name="version" ColumnName="version" />
           <ScalarProperty Name="definition" ColumnName="definition" />
+          <ScalarProperty Name="version" ColumnName="version" />
+          <ScalarProperty Name="diagram_id" ColumnName="diagram_id" />
+          <ScalarProperty Name="principal_id" ColumnName="principal_id" />
+          <ScalarProperty Name="name" ColumnName="name" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="tipo_evento">
       <EntityTypeMapping TypeName="ReservacionEventos2021Model.tipo_evento">
         <MappingFragment StoreEntitySet="tipo_evento">
-          <ScalarProperty Name="id_tipo_evento" ColumnName="id_tipo_evento" />
-          <ScalarProperty Name="nombre_evento" ColumnName="nombre_evento" />
           <ScalarProperty Name="descripcion_evento" ColumnName="descripcion_evento" />
+          <ScalarProperty Name="nombre_evento" ColumnName="nombre_evento" />
+          <ScalarProperty Name="id_tipo_evento" ColumnName="id_tipo_evento" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="tipo_persona">
       <EntityTypeMapping TypeName="ReservacionEventos2021Model.tipo_persona">
         <MappingFragment StoreEntitySet="tipo_persona">
-          <ScalarProperty Name="id_tipo_persona" ColumnName="id_tipo_persona" />
-          <ScalarProperty Name="tipo_persona1" ColumnName="tipo_persona" />
           <ScalarProperty Name="costo_pago_evento" ColumnName="costo_pago_evento" />
+          <ScalarProperty Name="tipo_persona1" ColumnName="tipo_persona" />
+          <ScalarProperty Name="id_tipo_persona" ColumnName="id_tipo_persona" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="userState">
       <EntityTypeMapping TypeName="ReservacionEventos2021Model.userState">
         <MappingFragment StoreEntitySet="userState">
-          <ScalarProperty Name="cod_estado" ColumnName="cod_estado" />
           <ScalarProperty Name="estado" ColumnName="estado" />
+          <ScalarProperty Name="cod_estado" ColumnName="cod_estado" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="usuarios">
       <EntityTypeMapping TypeName="ReservacionEventos2021Model.usuarios">
         <MappingFragment StoreEntitySet="usuarios">
-          <ScalarProperty Name="id_usuario" ColumnName="id_usuario" />
-          <ScalarProperty Name="usuario" ColumnName="usuario" />
-          <ScalarProperty Name="contrasena_usuario" ColumnName="contrasena_usuario" />
-          <ScalarProperty Name="cod_estado" ColumnName="cod_estado" />
           <ScalarProperty Name="id_rol" ColumnName="id_rol" />
+          <ScalarProperty Name="cod_estado" ColumnName="cod_estado" />
+          <ScalarProperty Name="contrasena_usuario" ColumnName="contrasena_usuario" />
+          <ScalarProperty Name="usuario" ColumnName="usuario" />
+          <ScalarProperty Name="id_usuario" ColumnName="id_usuario" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>

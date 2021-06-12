@@ -4,7 +4,7 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="ReservacionEventos2021Model.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+    <Schema Namespace="ReservacionEventos2021Model.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="local_evento">
           <Key>
             <PropertyRef Name="id_local" />
@@ -103,7 +103,7 @@
             <PropertyRef Name="id_tipo_persona" />
           </Key>
           <Property Name="id_tipo_persona" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="tipo_persona" Type="int" Nullable="false" />
+          <Property Name="tipo_persona" Type="varchar" MaxLength="50" Nullable="false" />
           <Property Name="costo_pago_evento" Type="money" Nullable="false" />
         </EntityType>
         <EntityType Name="userState">
@@ -298,18 +298,72 @@
             <End Role="usuarios" EntitySet="usuarios" />
           </AssociationSet>
         </EntityContainer>
-      </Schema>
-    </edmx:StorageModels>
+      </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="ReservacionEventos2021Model" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityContainer Name="ReservacionEventos2021Entities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="local_evento" EntityType="ReservacionEventos2021Model.local_evento" />
+          <EntitySet Name="modulos" EntityType="ReservacionEventos2021Model.modulos" />
+          <EntitySet Name="operaciones" EntityType="ReservacionEventos2021Model.operaciones" />
+          <EntitySet Name="persona_eventos" EntityType="ReservacionEventos2021Model.persona_eventos" />
+          <EntitySet Name="registro_inscripcion" EntityType="ReservacionEventos2021Model.registro_inscripcion" />
+          <EntitySet Name="reservacion_evento" EntityType="ReservacionEventos2021Model.reservacion_evento" />
+          <EntitySet Name="rol_opera" EntityType="ReservacionEventos2021Model.rol_opera" />
+          <EntitySet Name="roles" EntityType="ReservacionEventos2021Model.roles" />
+          <EntitySet Name="sysdiagrams" EntityType="ReservacionEventos2021Model.sysdiagrams" />
+          <EntitySet Name="tipo_evento" EntityType="ReservacionEventos2021Model.tipo_evento" />
+          <EntitySet Name="tipo_persona" EntityType="ReservacionEventos2021Model.tipo_persona" />
+          <EntitySet Name="userState" EntityType="ReservacionEventos2021Model.userState" />
+          <EntitySet Name="usuarios" EntityType="ReservacionEventos2021Model.usuarios" />
+          <AssociationSet Name="FK__reservaci__id_lo__3B75D760" Association="ReservacionEventos2021Model.FK__reservaci__id_lo__3B75D760">
+            <End Role="local_evento" EntitySet="local_evento" />
+            <End Role="reservacion_evento" EntitySet="reservacion_evento" />
+          </AssociationSet>
+          <AssociationSet Name="FK__operacion__codmo__4222D4EF" Association="ReservacionEventos2021Model.FK__operacion__codmo__4222D4EF">
+            <End Role="modulos" EntitySet="modulos" />
+            <End Role="operaciones" EntitySet="operaciones" />
+          </AssociationSet>
+          <AssociationSet Name="FK__rol_opera__codop__3F466844" Association="ReservacionEventos2021Model.FK__rol_opera__codop__3F466844">
+            <End Role="operaciones" EntitySet="operaciones" />
+            <End Role="rol_opera" EntitySet="rol_opera" />
+          </AssociationSet>
+          <AssociationSet Name="FK__reservaci__id_pe__3A81B327" Association="ReservacionEventos2021Model.FK__reservaci__id_pe__3A81B327">
+            <End Role="persona_eventos" EntitySet="persona_eventos" />
+            <End Role="reservacion_evento" EntitySet="reservacion_evento" />
+          </AssociationSet>
+          <AssociationSet Name="FK__registro___id_re__3C69FB99" Association="ReservacionEventos2021Model.FK__registro___id_re__3C69FB99">
+            <End Role="reservacion_evento" EntitySet="reservacion_evento" />
+            <End Role="registro_inscripcion" EntitySet="registro_inscripcion" />
+          </AssociationSet>
+          <AssociationSet Name="FK__registro___id_ti__3D5E1FD2" Association="ReservacionEventos2021Model.FK__registro___id_ti__3D5E1FD2">
+            <End Role="tipo_persona" EntitySet="tipo_persona" />
+            <End Role="registro_inscripcion" EntitySet="registro_inscripcion" />
+          </AssociationSet>
+          <AssociationSet Name="FK__reservaci__id_ti__398D8EEE" Association="ReservacionEventos2021Model.FK__reservaci__id_ti__398D8EEE">
+            <End Role="tipo_evento" EntitySet="tipo_evento" />
+            <End Role="reservacion_evento" EntitySet="reservacion_evento" />
+          </AssociationSet>
+          <AssociationSet Name="FK__rol_opera__id_ro__3E52440B" Association="ReservacionEventos2021Model.FK__rol_opera__id_ro__3E52440B">
+            <End Role="roles" EntitySet="roles" />
+            <End Role="rol_opera" EntitySet="rol_opera" />
+          </AssociationSet>
+          <AssociationSet Name="FK__usuarios__id_rol__37A5467C" Association="ReservacionEventos2021Model.FK__usuarios__id_rol__37A5467C">
+            <End Role="roles" EntitySet="roles" />
+            <End Role="usuarios" EntitySet="usuarios" />
+          </AssociationSet>
+          <AssociationSet Name="FK__usuarios__cod_es__38996AB5" Association="ReservacionEventos2021Model.FK__usuarios__cod_es__38996AB5">
+            <End Role="userState" EntitySet="userState" />
+            <End Role="usuarios" EntitySet="usuarios" />
+          </AssociationSet>
+        </EntityContainer>
         <EntityType Name="local_evento">
           <Key>
             <PropertyRef Name="id_local" />
           </Key>
           <Property Name="id_local" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="nombre_local" Type="String" MaxLength="75" FixedLength="false" Unicode="false" Nullable="false" />
-          <NavigationProperty Name="reservacion_evento" Relationship="Self.FK__reservaci__id_lo__3B75D760" FromRole="local_evento" ToRole="reservacion_evento" />
+          <Property Name="nombre_local" Type="String" Nullable="false" MaxLength="75" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="reservacion_evento" Relationship="ReservacionEventos2021Model.FK__reservaci__id_lo__3B75D760" FromRole="local_evento" ToRole="reservacion_evento" />
         </EntityType>
         <EntityType Name="modulos">
           <Key>
@@ -317,7 +371,7 @@
           </Key>
           <Property Name="codmod" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="nombre" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
-          <NavigationProperty Name="operaciones" Relationship="Self.FK__operacion__codmo__4222D4EF" FromRole="modulos" ToRole="operaciones" />
+          <NavigationProperty Name="operaciones" Relationship="ReservacionEventos2021Model.FK__operacion__codmo__4222D4EF" FromRole="modulos" ToRole="operaciones" />
         </EntityType>
         <EntityType Name="operaciones">
           <Key>
@@ -326,18 +380,18 @@
           <Property Name="codopera" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="nomopera" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
           <Property Name="codmod" Type="Int32" />
-          <NavigationProperty Name="modulos" Relationship="Self.FK__operacion__codmo__4222D4EF" FromRole="operaciones" ToRole="modulos" />
-          <NavigationProperty Name="rol_opera" Relationship="Self.FK__rol_opera__codop__3F466844" FromRole="operaciones" ToRole="rol_opera" />
+          <NavigationProperty Name="modulos" Relationship="ReservacionEventos2021Model.FK__operacion__codmo__4222D4EF" FromRole="operaciones" ToRole="modulos" />
+          <NavigationProperty Name="rol_opera" Relationship="ReservacionEventos2021Model.FK__rol_opera__codop__3F466844" FromRole="operaciones" ToRole="rol_opera" />
         </EntityType>
         <EntityType Name="persona_eventos">
           <Key>
             <PropertyRef Name="id_persona" />
           </Key>
           <Property Name="id_persona" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="nombres_persona" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="apellidos_persona" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="profesion_persona" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
-          <NavigationProperty Name="reservacion_evento" Relationship="Self.FK__reservaci__id_pe__3A81B327" FromRole="persona_eventos" ToRole="reservacion_evento" />
+          <Property Name="nombres_persona" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="apellidos_persona" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="profesion_persona" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="reservacion_evento" Relationship="ReservacionEventos2021Model.FK__reservaci__id_pe__3A81B327" FromRole="persona_eventos" ToRole="reservacion_evento" />
         </EntityType>
         <EntityType Name="registro_inscripcion">
           <Key>
@@ -345,34 +399,34 @@
           </Key>
           <Property Name="id_inscripcion" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="id_reservacion" Type="Int32" Nullable="false" />
-          <Property Name="nombres_persona" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="apellidos_persona" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="telefono_persona" Type="String" MaxLength="8" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="correo_persona" Type="String" MaxLength="75" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="nombres_persona" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="apellidos_persona" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="telefono_persona" Type="String" Nullable="false" MaxLength="8" FixedLength="false" Unicode="false" />
+          <Property Name="correo_persona" Type="String" Nullable="false" MaxLength="75" FixedLength="false" Unicode="false" />
           <Property Name="id_tipo_persona" Type="Int32" Nullable="false" />
-          <NavigationProperty Name="reservacion_evento" Relationship="Self.FK__registro___id_re__3C69FB99" FromRole="registro_inscripcion" ToRole="reservacion_evento" />
-          <NavigationProperty Name="tipo_persona" Relationship="Self.FK__registro___id_ti__3D5E1FD2" FromRole="registro_inscripcion" ToRole="tipo_persona" />
+          <NavigationProperty Name="reservacion_evento" Relationship="ReservacionEventos2021Model.FK__registro___id_re__3C69FB99" FromRole="registro_inscripcion" ToRole="reservacion_evento" />
+          <NavigationProperty Name="tipo_persona" Relationship="ReservacionEventos2021Model.FK__registro___id_ti__3D5E1FD2" FromRole="registro_inscripcion" ToRole="tipo_persona" />
         </EntityType>
         <EntityType Name="reservacion_evento">
           <Key>
             <PropertyRef Name="id_reservacion" />
           </Key>
           <Property Name="id_reservacion" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="titulo_evento" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="titulo_evento" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
           <Property Name="fecha_evento" Type="DateTime" Nullable="false" Precision="0" />
           <Property Name="inicio_hora_evento" Type="Time" Nullable="false" Precision="7" />
           <Property Name="fin_hora_evento" Type="Time" Nullable="false" Precision="7" />
-          <Property Name="duracion_evento" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="descripcion_evento" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="duracion_evento" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="descripcion_evento" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="false" />
           <Property Name="id_tipo_evento" Type="Int32" Nullable="false" />
           <Property Name="id_persona" Type="Int32" Nullable="false" />
           <Property Name="id_local" Type="Int32" Nullable="false" />
-          <Property Name="estado_evento" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="tipo_persona" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
-          <NavigationProperty Name="local_evento" Relationship="Self.FK__reservaci__id_lo__3B75D760" FromRole="reservacion_evento" ToRole="local_evento" />
-          <NavigationProperty Name="persona_eventos" Relationship="Self.FK__reservaci__id_pe__3A81B327" FromRole="reservacion_evento" ToRole="persona_eventos" />
-          <NavigationProperty Name="registro_inscripcion" Relationship="Self.FK__registro___id_re__3C69FB99" FromRole="reservacion_evento" ToRole="registro_inscripcion" />
-          <NavigationProperty Name="tipo_evento" Relationship="Self.FK__reservaci__id_ti__398D8EEE" FromRole="reservacion_evento" ToRole="tipo_evento" />
+          <Property Name="estado_evento" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="tipo_persona" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="local_evento" Relationship="ReservacionEventos2021Model.FK__reservaci__id_lo__3B75D760" FromRole="reservacion_evento" ToRole="local_evento" />
+          <NavigationProperty Name="persona_eventos" Relationship="ReservacionEventos2021Model.FK__reservaci__id_pe__3A81B327" FromRole="reservacion_evento" ToRole="persona_eventos" />
+          <NavigationProperty Name="registro_inscripcion" Relationship="ReservacionEventos2021Model.FK__registro___id_re__3C69FB99" FromRole="reservacion_evento" ToRole="registro_inscripcion" />
+          <NavigationProperty Name="tipo_evento" Relationship="ReservacionEventos2021Model.FK__reservaci__id_ti__398D8EEE" FromRole="reservacion_evento" ToRole="tipo_evento" />
         </EntityType>
         <EntityType Name="rol_opera">
           <Key>
@@ -381,8 +435,8 @@
           <Property Name="id_rol_opera" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="id_rol" Type="Int32" Nullable="false" />
           <Property Name="codopera" Type="Int32" Nullable="false" />
-          <NavigationProperty Name="operaciones" Relationship="Self.FK__rol_opera__codop__3F466844" FromRole="rol_opera" ToRole="operaciones" />
-          <NavigationProperty Name="roles" Relationship="Self.FK__rol_opera__id_ro__3E52440B" FromRole="rol_opera" ToRole="roles" />
+          <NavigationProperty Name="operaciones" Relationship="ReservacionEventos2021Model.FK__rol_opera__codop__3F466844" FromRole="rol_opera" ToRole="operaciones" />
+          <NavigationProperty Name="roles" Relationship="ReservacionEventos2021Model.FK__rol_opera__id_ro__3E52440B" FromRole="rol_opera" ToRole="roles" />
         </EntityType>
         <EntityType Name="roles">
           <Key>
@@ -390,14 +444,14 @@
           </Key>
           <Property Name="id_rol" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="rol" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
-          <NavigationProperty Name="rol_opera" Relationship="Self.FK__rol_opera__id_ro__3E52440B" FromRole="roles" ToRole="rol_opera" />
-          <NavigationProperty Name="usuarios" Relationship="Self.FK__usuarios__id_rol__37A5467C" FromRole="roles" ToRole="usuarios" />
+          <NavigationProperty Name="rol_opera" Relationship="ReservacionEventos2021Model.FK__rol_opera__id_ro__3E52440B" FromRole="roles" ToRole="rol_opera" />
+          <NavigationProperty Name="usuarios" Relationship="ReservacionEventos2021Model.FK__usuarios__id_rol__37A5467C" FromRole="roles" ToRole="usuarios" />
         </EntityType>
         <EntityType Name="sysdiagrams">
           <Key>
             <PropertyRef Name="diagram_id" />
           </Key>
-          <Property Name="name" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="name" Type="String" Nullable="false" MaxLength="128" FixedLength="false" Unicode="true" />
           <Property Name="principal_id" Type="Int32" Nullable="false" />
           <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="version" Type="Int32" />
@@ -408,18 +462,18 @@
             <PropertyRef Name="id_tipo_evento" />
           </Key>
           <Property Name="id_tipo_evento" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="nombre_evento" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="nombre_evento" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
           <Property Name="descripcion_evento" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
-          <NavigationProperty Name="reservacion_evento" Relationship="Self.FK__reservaci__id_ti__398D8EEE" FromRole="tipo_evento" ToRole="reservacion_evento" />
+          <NavigationProperty Name="reservacion_evento" Relationship="ReservacionEventos2021Model.FK__reservaci__id_ti__398D8EEE" FromRole="tipo_evento" ToRole="reservacion_evento" />
         </EntityType>
         <EntityType Name="tipo_persona">
           <Key>
             <PropertyRef Name="id_tipo_persona" />
           </Key>
           <Property Name="id_tipo_persona" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="tipo_persona1" Type="Int32" Nullable="false" />
-          <Property Name="costo_pago_evento" Type="Decimal" Precision="19" Scale="4" Nullable="false" />
-          <NavigationProperty Name="registro_inscripcion" Relationship="Self.FK__registro___id_ti__3D5E1FD2" FromRole="tipo_persona" ToRole="registro_inscripcion" />
+          <Property Name="tipo_persona1" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="costo_pago_evento" Type="Decimal" Nullable="false" Precision="19" Scale="4" />
+          <NavigationProperty Name="registro_inscripcion" Relationship="ReservacionEventos2021Model.FK__registro___id_ti__3D5E1FD2" FromRole="tipo_persona" ToRole="registro_inscripcion" />
         </EntityType>
         <EntityType Name="userState">
           <Key>
@@ -427,23 +481,23 @@
           </Key>
           <Property Name="cod_estado" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="estado" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
-          <NavigationProperty Name="usuarios" Relationship="Self.FK__usuarios__cod_es__38996AB5" FromRole="userState" ToRole="usuarios" />
+          <NavigationProperty Name="usuarios" Relationship="ReservacionEventos2021Model.FK__usuarios__cod_es__38996AB5" FromRole="userState" ToRole="usuarios" />
         </EntityType>
         <EntityType Name="usuarios">
           <Key>
             <PropertyRef Name="id_usuario" />
           </Key>
           <Property Name="id_usuario" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="usuario" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="contrasena_usuario" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="usuario" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="contrasena_usuario" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
           <Property Name="cod_estado" Type="Int32" Nullable="false" />
           <Property Name="id_rol" Type="Int32" Nullable="false" />
-          <NavigationProperty Name="roles" Relationship="Self.FK__usuarios__id_rol__37A5467C" FromRole="usuarios" ToRole="roles" />
-          <NavigationProperty Name="userState" Relationship="Self.FK__usuarios__cod_es__38996AB5" FromRole="usuarios" ToRole="userState" />
+          <NavigationProperty Name="roles" Relationship="ReservacionEventos2021Model.FK__usuarios__id_rol__37A5467C" FromRole="usuarios" ToRole="roles" />
+          <NavigationProperty Name="userState" Relationship="ReservacionEventos2021Model.FK__usuarios__cod_es__38996AB5" FromRole="usuarios" ToRole="userState" />
         </EntityType>
         <Association Name="FK__reservaci__id_lo__3B75D760">
-          <End Role="local_evento" Type="Self.local_evento" Multiplicity="1" />
-          <End Role="reservacion_evento" Type="Self.reservacion_evento" Multiplicity="*" />
+          <End Type="ReservacionEventos2021Model.local_evento" Role="local_evento" Multiplicity="1" />
+          <End Type="ReservacionEventos2021Model.reservacion_evento" Role="reservacion_evento" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="local_evento">
               <PropertyRef Name="id_local" />
@@ -454,8 +508,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK__operacion__codmo__4222D4EF">
-          <End Role="modulos" Type="Self.modulos" Multiplicity="0..1" />
-          <End Role="operaciones" Type="Self.operaciones" Multiplicity="*" />
+          <End Type="ReservacionEventos2021Model.modulos" Role="modulos" Multiplicity="0..1" />
+          <End Type="ReservacionEventos2021Model.operaciones" Role="operaciones" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="modulos">
               <PropertyRef Name="codmod" />
@@ -466,8 +520,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK__rol_opera__codop__3F466844">
-          <End Role="operaciones" Type="Self.operaciones" Multiplicity="1" />
-          <End Role="rol_opera" Type="Self.rol_opera" Multiplicity="*" />
+          <End Type="ReservacionEventos2021Model.operaciones" Role="operaciones" Multiplicity="1" />
+          <End Type="ReservacionEventos2021Model.rol_opera" Role="rol_opera" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="operaciones">
               <PropertyRef Name="codopera" />
@@ -478,8 +532,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK__reservaci__id_pe__3A81B327">
-          <End Role="persona_eventos" Type="Self.persona_eventos" Multiplicity="1" />
-          <End Role="reservacion_evento" Type="Self.reservacion_evento" Multiplicity="*" />
+          <End Type="ReservacionEventos2021Model.persona_eventos" Role="persona_eventos" Multiplicity="1" />
+          <End Type="ReservacionEventos2021Model.reservacion_evento" Role="reservacion_evento" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="persona_eventos">
               <PropertyRef Name="id_persona" />
@@ -490,8 +544,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK__registro___id_re__3C69FB99">
-          <End Role="reservacion_evento" Type="Self.reservacion_evento" Multiplicity="1" />
-          <End Role="registro_inscripcion" Type="Self.registro_inscripcion" Multiplicity="*" />
+          <End Type="ReservacionEventos2021Model.reservacion_evento" Role="reservacion_evento" Multiplicity="1" />
+          <End Type="ReservacionEventos2021Model.registro_inscripcion" Role="registro_inscripcion" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="reservacion_evento">
               <PropertyRef Name="id_reservacion" />
@@ -502,8 +556,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK__registro___id_ti__3D5E1FD2">
-          <End Role="tipo_persona" Type="Self.tipo_persona" Multiplicity="1" />
-          <End Role="registro_inscripcion" Type="Self.registro_inscripcion" Multiplicity="*" />
+          <End Type="ReservacionEventos2021Model.tipo_persona" Role="tipo_persona" Multiplicity="1" />
+          <End Type="ReservacionEventos2021Model.registro_inscripcion" Role="registro_inscripcion" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="tipo_persona">
               <PropertyRef Name="id_tipo_persona" />
@@ -514,8 +568,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK__reservaci__id_ti__398D8EEE">
-          <End Role="tipo_evento" Type="Self.tipo_evento" Multiplicity="1" />
-          <End Role="reservacion_evento" Type="Self.reservacion_evento" Multiplicity="*" />
+          <End Type="ReservacionEventos2021Model.tipo_evento" Role="tipo_evento" Multiplicity="1" />
+          <End Type="ReservacionEventos2021Model.reservacion_evento" Role="reservacion_evento" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="tipo_evento">
               <PropertyRef Name="id_tipo_evento" />
@@ -526,8 +580,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK__rol_opera__id_ro__3E52440B">
-          <End Role="roles" Type="Self.roles" Multiplicity="1" />
-          <End Role="rol_opera" Type="Self.rol_opera" Multiplicity="*" />
+          <End Type="ReservacionEventos2021Model.roles" Role="roles" Multiplicity="1" />
+          <End Type="ReservacionEventos2021Model.rol_opera" Role="rol_opera" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="roles">
               <PropertyRef Name="id_rol" />
@@ -538,8 +592,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK__usuarios__id_rol__37A5467C">
-          <End Role="roles" Type="Self.roles" Multiplicity="1" />
-          <End Role="usuarios" Type="Self.usuarios" Multiplicity="*" />
+          <End Type="ReservacionEventos2021Model.roles" Role="roles" Multiplicity="1" />
+          <End Type="ReservacionEventos2021Model.usuarios" Role="usuarios" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="roles">
               <PropertyRef Name="id_rol" />
@@ -550,8 +604,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK__usuarios__cod_es__38996AB5">
-          <End Role="userState" Type="Self.userState" Multiplicity="1" />
-          <End Role="usuarios" Type="Self.usuarios" Multiplicity="*" />
+          <End Type="ReservacionEventos2021Model.userState" Role="userState" Multiplicity="1" />
+          <End Type="ReservacionEventos2021Model.usuarios" Role="usuarios" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="userState">
               <PropertyRef Name="cod_estado" />
@@ -561,61 +615,6 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <EntityContainer Name="ReservacionEventos2021Entities" annotation:LazyLoadingEnabled="true">
-          <EntitySet Name="local_evento" EntityType="Self.local_evento" />
-          <EntitySet Name="modulos" EntityType="Self.modulos" />
-          <EntitySet Name="operaciones" EntityType="Self.operaciones" />
-          <EntitySet Name="persona_eventos" EntityType="Self.persona_eventos" />
-          <EntitySet Name="registro_inscripcion" EntityType="Self.registro_inscripcion" />
-          <EntitySet Name="reservacion_evento" EntityType="Self.reservacion_evento" />
-          <EntitySet Name="rol_opera" EntityType="Self.rol_opera" />
-          <EntitySet Name="roles" EntityType="Self.roles" />
-          <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" />
-          <EntitySet Name="tipo_evento" EntityType="Self.tipo_evento" />
-          <EntitySet Name="tipo_persona" EntityType="Self.tipo_persona" />
-          <EntitySet Name="userState" EntityType="Self.userState" />
-          <EntitySet Name="usuarios" EntityType="Self.usuarios" />
-          <AssociationSet Name="FK__reservaci__id_lo__3B75D760" Association="Self.FK__reservaci__id_lo__3B75D760">
-            <End Role="local_evento" EntitySet="local_evento" />
-            <End Role="reservacion_evento" EntitySet="reservacion_evento" />
-          </AssociationSet>
-          <AssociationSet Name="FK__operacion__codmo__4222D4EF" Association="Self.FK__operacion__codmo__4222D4EF">
-            <End Role="modulos" EntitySet="modulos" />
-            <End Role="operaciones" EntitySet="operaciones" />
-          </AssociationSet>
-          <AssociationSet Name="FK__rol_opera__codop__3F466844" Association="Self.FK__rol_opera__codop__3F466844">
-            <End Role="operaciones" EntitySet="operaciones" />
-            <End Role="rol_opera" EntitySet="rol_opera" />
-          </AssociationSet>
-          <AssociationSet Name="FK__reservaci__id_pe__3A81B327" Association="Self.FK__reservaci__id_pe__3A81B327">
-            <End Role="persona_eventos" EntitySet="persona_eventos" />
-            <End Role="reservacion_evento" EntitySet="reservacion_evento" />
-          </AssociationSet>
-          <AssociationSet Name="FK__registro___id_re__3C69FB99" Association="Self.FK__registro___id_re__3C69FB99">
-            <End Role="reservacion_evento" EntitySet="reservacion_evento" />
-            <End Role="registro_inscripcion" EntitySet="registro_inscripcion" />
-          </AssociationSet>
-          <AssociationSet Name="FK__registro___id_ti__3D5E1FD2" Association="Self.FK__registro___id_ti__3D5E1FD2">
-            <End Role="tipo_persona" EntitySet="tipo_persona" />
-            <End Role="registro_inscripcion" EntitySet="registro_inscripcion" />
-          </AssociationSet>
-          <AssociationSet Name="FK__reservaci__id_ti__398D8EEE" Association="Self.FK__reservaci__id_ti__398D8EEE">
-            <End Role="tipo_evento" EntitySet="tipo_evento" />
-            <End Role="reservacion_evento" EntitySet="reservacion_evento" />
-          </AssociationSet>
-          <AssociationSet Name="FK__rol_opera__id_ro__3E52440B" Association="Self.FK__rol_opera__id_ro__3E52440B">
-            <End Role="roles" EntitySet="roles" />
-            <End Role="rol_opera" EntitySet="rol_opera" />
-          </AssociationSet>
-          <AssociationSet Name="FK__usuarios__id_rol__37A5467C" Association="Self.FK__usuarios__id_rol__37A5467C">
-            <End Role="roles" EntitySet="roles" />
-            <End Role="usuarios" EntitySet="usuarios" />
-          </AssociationSet>
-          <AssociationSet Name="FK__usuarios__cod_es__38996AB5" Association="Self.FK__usuarios__cod_es__38996AB5">
-            <End Role="userState" EntitySet="userState" />
-            <End Role="usuarios" EntitySet="usuarios" />
-          </AssociationSet>
-        </EntityContainer>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -625,131 +624,131 @@
           <EntitySetMapping Name="local_evento">
             <EntityTypeMapping TypeName="ReservacionEventos2021Model.local_evento">
               <MappingFragment StoreEntitySet="local_evento">
-                <ScalarProperty Name="id_local" ColumnName="id_local" />
                 <ScalarProperty Name="nombre_local" ColumnName="nombre_local" />
+                <ScalarProperty Name="id_local" ColumnName="id_local" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="modulos">
             <EntityTypeMapping TypeName="ReservacionEventos2021Model.modulos">
               <MappingFragment StoreEntitySet="modulos">
-                <ScalarProperty Name="codmod" ColumnName="codmod" />
                 <ScalarProperty Name="nombre" ColumnName="nombre" />
+                <ScalarProperty Name="codmod" ColumnName="codmod" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="operaciones">
             <EntityTypeMapping TypeName="ReservacionEventos2021Model.operaciones">
               <MappingFragment StoreEntitySet="operaciones">
-                <ScalarProperty Name="codopera" ColumnName="codopera" />
-                <ScalarProperty Name="nomopera" ColumnName="nomopera" />
                 <ScalarProperty Name="codmod" ColumnName="codmod" />
+                <ScalarProperty Name="nomopera" ColumnName="nomopera" />
+                <ScalarProperty Name="codopera" ColumnName="codopera" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="persona_eventos">
             <EntityTypeMapping TypeName="ReservacionEventos2021Model.persona_eventos">
               <MappingFragment StoreEntitySet="persona_eventos">
-                <ScalarProperty Name="id_persona" ColumnName="id_persona" />
-                <ScalarProperty Name="nombres_persona" ColumnName="nombres_persona" />
-                <ScalarProperty Name="apellidos_persona" ColumnName="apellidos_persona" />
                 <ScalarProperty Name="profesion_persona" ColumnName="profesion_persona" />
+                <ScalarProperty Name="apellidos_persona" ColumnName="apellidos_persona" />
+                <ScalarProperty Name="nombres_persona" ColumnName="nombres_persona" />
+                <ScalarProperty Name="id_persona" ColumnName="id_persona" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="registro_inscripcion">
             <EntityTypeMapping TypeName="ReservacionEventos2021Model.registro_inscripcion">
               <MappingFragment StoreEntitySet="registro_inscripcion">
-                <ScalarProperty Name="id_inscripcion" ColumnName="id_inscripcion" />
-                <ScalarProperty Name="id_reservacion" ColumnName="id_reservacion" />
-                <ScalarProperty Name="nombres_persona" ColumnName="nombres_persona" />
-                <ScalarProperty Name="apellidos_persona" ColumnName="apellidos_persona" />
-                <ScalarProperty Name="telefono_persona" ColumnName="telefono_persona" />
-                <ScalarProperty Name="correo_persona" ColumnName="correo_persona" />
                 <ScalarProperty Name="id_tipo_persona" ColumnName="id_tipo_persona" />
+                <ScalarProperty Name="correo_persona" ColumnName="correo_persona" />
+                <ScalarProperty Name="telefono_persona" ColumnName="telefono_persona" />
+                <ScalarProperty Name="apellidos_persona" ColumnName="apellidos_persona" />
+                <ScalarProperty Name="nombres_persona" ColumnName="nombres_persona" />
+                <ScalarProperty Name="id_reservacion" ColumnName="id_reservacion" />
+                <ScalarProperty Name="id_inscripcion" ColumnName="id_inscripcion" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="reservacion_evento">
             <EntityTypeMapping TypeName="ReservacionEventos2021Model.reservacion_evento">
               <MappingFragment StoreEntitySet="reservacion_evento">
-                <ScalarProperty Name="id_reservacion" ColumnName="id_reservacion" />
-                <ScalarProperty Name="titulo_evento" ColumnName="titulo_evento" />
-                <ScalarProperty Name="fecha_evento" ColumnName="fecha_evento" />
-                <ScalarProperty Name="inicio_hora_evento" ColumnName="inicio_hora_evento" />
-                <ScalarProperty Name="fin_hora_evento" ColumnName="fin_hora_evento" />
-                <ScalarProperty Name="duracion_evento" ColumnName="duracion_evento" />
-                <ScalarProperty Name="descripcion_evento" ColumnName="descripcion_evento" />
-                <ScalarProperty Name="id_tipo_evento" ColumnName="id_tipo_evento" />
-                <ScalarProperty Name="id_persona" ColumnName="id_persona" />
-                <ScalarProperty Name="id_local" ColumnName="id_local" />
-                <ScalarProperty Name="estado_evento" ColumnName="estado_evento" />
                 <ScalarProperty Name="tipo_persona" ColumnName="tipo_persona" />
+                <ScalarProperty Name="estado_evento" ColumnName="estado_evento" />
+                <ScalarProperty Name="id_local" ColumnName="id_local" />
+                <ScalarProperty Name="id_persona" ColumnName="id_persona" />
+                <ScalarProperty Name="id_tipo_evento" ColumnName="id_tipo_evento" />
+                <ScalarProperty Name="descripcion_evento" ColumnName="descripcion_evento" />
+                <ScalarProperty Name="duracion_evento" ColumnName="duracion_evento" />
+                <ScalarProperty Name="fin_hora_evento" ColumnName="fin_hora_evento" />
+                <ScalarProperty Name="inicio_hora_evento" ColumnName="inicio_hora_evento" />
+                <ScalarProperty Name="fecha_evento" ColumnName="fecha_evento" />
+                <ScalarProperty Name="titulo_evento" ColumnName="titulo_evento" />
+                <ScalarProperty Name="id_reservacion" ColumnName="id_reservacion" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="rol_opera">
             <EntityTypeMapping TypeName="ReservacionEventos2021Model.rol_opera">
               <MappingFragment StoreEntitySet="rol_opera">
-                <ScalarProperty Name="id_rol_opera" ColumnName="id_rol_opera" />
-                <ScalarProperty Name="id_rol" ColumnName="id_rol" />
                 <ScalarProperty Name="codopera" ColumnName="codopera" />
+                <ScalarProperty Name="id_rol" ColumnName="id_rol" />
+                <ScalarProperty Name="id_rol_opera" ColumnName="id_rol_opera" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="roles">
             <EntityTypeMapping TypeName="ReservacionEventos2021Model.roles">
               <MappingFragment StoreEntitySet="roles">
-                <ScalarProperty Name="id_rol" ColumnName="id_rol" />
                 <ScalarProperty Name="rol" ColumnName="rol" />
+                <ScalarProperty Name="id_rol" ColumnName="id_rol" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="sysdiagrams">
             <EntityTypeMapping TypeName="ReservacionEventos2021Model.sysdiagrams">
               <MappingFragment StoreEntitySet="sysdiagrams">
-                <ScalarProperty Name="name" ColumnName="name" />
-                <ScalarProperty Name="principal_id" ColumnName="principal_id" />
-                <ScalarProperty Name="diagram_id" ColumnName="diagram_id" />
-                <ScalarProperty Name="version" ColumnName="version" />
                 <ScalarProperty Name="definition" ColumnName="definition" />
+                <ScalarProperty Name="version" ColumnName="version" />
+                <ScalarProperty Name="diagram_id" ColumnName="diagram_id" />
+                <ScalarProperty Name="principal_id" ColumnName="principal_id" />
+                <ScalarProperty Name="name" ColumnName="name" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="tipo_evento">
             <EntityTypeMapping TypeName="ReservacionEventos2021Model.tipo_evento">
               <MappingFragment StoreEntitySet="tipo_evento">
-                <ScalarProperty Name="id_tipo_evento" ColumnName="id_tipo_evento" />
-                <ScalarProperty Name="nombre_evento" ColumnName="nombre_evento" />
                 <ScalarProperty Name="descripcion_evento" ColumnName="descripcion_evento" />
+                <ScalarProperty Name="nombre_evento" ColumnName="nombre_evento" />
+                <ScalarProperty Name="id_tipo_evento" ColumnName="id_tipo_evento" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="tipo_persona">
             <EntityTypeMapping TypeName="ReservacionEventos2021Model.tipo_persona">
               <MappingFragment StoreEntitySet="tipo_persona">
-                <ScalarProperty Name="id_tipo_persona" ColumnName="id_tipo_persona" />
-                <ScalarProperty Name="tipo_persona1" ColumnName="tipo_persona" />
                 <ScalarProperty Name="costo_pago_evento" ColumnName="costo_pago_evento" />
+                <ScalarProperty Name="tipo_persona1" ColumnName="tipo_persona" />
+                <ScalarProperty Name="id_tipo_persona" ColumnName="id_tipo_persona" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="userState">
             <EntityTypeMapping TypeName="ReservacionEventos2021Model.userState">
               <MappingFragment StoreEntitySet="userState">
-                <ScalarProperty Name="cod_estado" ColumnName="cod_estado" />
                 <ScalarProperty Name="estado" ColumnName="estado" />
+                <ScalarProperty Name="cod_estado" ColumnName="cod_estado" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="usuarios">
             <EntityTypeMapping TypeName="ReservacionEventos2021Model.usuarios">
               <MappingFragment StoreEntitySet="usuarios">
-                <ScalarProperty Name="id_usuario" ColumnName="id_usuario" />
-                <ScalarProperty Name="usuario" ColumnName="usuario" />
-                <ScalarProperty Name="contrasena_usuario" ColumnName="contrasena_usuario" />
-                <ScalarProperty Name="cod_estado" ColumnName="cod_estado" />
                 <ScalarProperty Name="id_rol" ColumnName="id_rol" />
+                <ScalarProperty Name="cod_estado" ColumnName="cod_estado" />
+                <ScalarProperty Name="contrasena_usuario" ColumnName="contrasena_usuario" />
+                <ScalarProperty Name="usuario" ColumnName="usuario" />
+                <ScalarProperty Name="id_usuario" ColumnName="id_usuario" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
