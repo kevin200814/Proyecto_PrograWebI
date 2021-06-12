@@ -1,0 +1,36 @@
+﻿@model ReservacionEventosUSAM.Models.CRUD.PersonaEventosUpdate
+@{
+    ViewBag.Title = "ActualizarPersonaEvento";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@using (Html.BeginForm("ActualizarPersonaEvento", "PersonaEventos", FormMethod.Post, new { role = "form", @class = "" }))
+{
+    <div class="card">
+        <div class="card-header">
+            <h2>Actualizar Persona de Evento</h2>
+        </div>
+        <div class="card-body">
+            @Html.AntiForgeryToken()
+
+            @Html.ValidationMessage("error", new { @class = "tex-danger" })
+
+            @Html.HiddenFor(d => d.id_persona)
+            @Html.LabelFor(d => d.nombres_persona)
+            @Html.TextBoxFor(d => d.nombres_persona, new { @class = "form-control" })
+            @Html.ValidationMessage("nombre", new { @class = "text-danger" })
+            <br />
+            @Html.LabelFor(d => d.apellidos_persona)
+            @Html.TextBoxFor(d => d.apellidos_persona, new { @class = "form-control" })
+            @Html.ValidationMessage("apellido", new { @class = "text-danger" })
+            <br />
+            @Html.LabelFor(d => d.profesion_persona)
+            @Html.TextBoxFor(d => d.profesion_persona, new { @class = "form-control" })
+            @Html.ValidationMessage("profesion", new { @class = "text-danger" })
+        </div>
+        <div class="card-footer">
+            <input type="submit" class="btn btn-success" value="Guardar" />
+            <a class="btn btn-danger" href="@Url.Content("~/PersonaEventos/ConsultarPersonaEvento/")">Cancelar</a>
+        </div>
+    </div>
+}

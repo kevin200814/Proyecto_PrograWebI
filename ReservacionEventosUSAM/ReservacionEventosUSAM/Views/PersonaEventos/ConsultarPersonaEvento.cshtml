@@ -1,6 +1,6 @@
-﻿@model List<ReservacionEventosUSAM.Models.CRUD.TipoPersonaVista>
+﻿@model  List<ReservacionEventosUSAM.Models.CRUD.PersonaEventosVista>
 @{
-    ViewBag.Title = "ConsultarTipoPersona";
+    ViewBag.Title = "ConsultarPersonaEvento";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
@@ -40,10 +40,10 @@
                 <a class="nav-link" href="@Url.Content("~/Tipo_evento/ConsultarTipoEvento")">Tipo evento <i class="bi bi-calendar2-event"></i></a>
             </li>
             <li class="nav-item">
-                <a class="nav-link active" href="@Url.Content("~/PersonaEventos/ConsultarPersonaEvento")">Persona Eventos<i class="bi bi-person-bounding-box"></i></a>
+                <a class="nav-link active" href="@Url.Content("~/Tipo_persona/ConsultarTipoPersona")">Tipo persona <i class="bi bi-person-bounding-box"></i></a>
             </li>
             <li class="nav-item">
-                <a class="nav-link active" href="@Url.Content("~/Tipo_persona/ConsultarTipoPersona")">Tipo persona <i class="bi bi-person-bounding-box"></i></a>
+                <a class="nav-link active" href="@Url.Content("~/PersonaEventos/ConsultarPersonaEvento")">Persona Eventos<i class="bi bi-person-bounding-box"></i></a>
             </li>
             <li class="nav-item">
                 <a class="nav-link" href="@Url.Content("~/Registros/ConsultarRegistro")">Registros <i class="bi bi-person-lines-fill"></i></a>
@@ -60,31 +60,33 @@
 
         <div class="table-responsive">
             <!--Boton de agregar-->
-            <button class="btn btn-info float-start text-light" onclick="document.location.href='@Url.Content("~/Tipo_persona/AgregarTipoPersona")'">Nuevo Tipo Persona</button>
+            <button class="btn btn-primary float-start text-light" onclick="document.location.href='@Url.Content("~/PersonaEventos/AgregarPersonaEvento")'">Persona eventos</button>
             <br />
             <!-- Aquí va la tabla ¡No olviden poner el id a la tabla!-->
             <table id="table" class="table">
                 <thead>
                     <tr>
                         <th scope="col">#</th>
-                        <th scope="col">Tipo Persona</th>
-                        <th scope="col">Costo Evento</th>
+                        <th scope="col">Nombres</th>
+                        <th scope="col">Apellidos</th>
+                        <th scope="col">Profesion</th>
                         <th scope="col">Acciones</th>
                     </tr>
                 </thead>
                 <tbody>
-                  @foreach (var objPerson in Model)
-                  {
-                    <tr>
-                        <th scope="row">@objPerson.id_tipo_persona</th>
-                        <td>@objPerson.tipo_persona</td>
-                        <td>@objPerson.costo_pago_evento</td>
-                        <td>
-                            <a class="btn btn-primary" href="@Url.Content("~/Tipo_persona/ActualizarTipoPersona/"+objPerson.id_tipo_persona)"><i class="bi bi-pencil-square"></i></a>
-                            <a class="btn btn-danger" href="@Url.Content("~/Tipo_persona/DeleteTipoPersona/"+objPerson.id_tipo_persona)"><i class="bi bi-trash"></i></a>
-                        </td>
-                    </tr>
-                  }
+                    @foreach (var objPerson in Model)
+                    {
+                        <tr>
+                            <th scope="row">@objPerson.id_persona</th>
+                            <td>@objPerson.nombres_persona</td>
+                            <td>@objPerson.apellidos_persona</td>
+                            <td>@objPerson.profesion_persona</td>
+                            <td>
+                                <a class="btn btn-primary" href="@Url.Content("~/PersonaEventos/ActualizarPersonaEvento/"+objPerson.id_persona)"><i class="bi bi-pencil-square"></i></a>
+                                <a class="btn btn-danger" href="@Url.Content("~/PersonaEventos/DeletePersonaEvento/"+objPerson.id_persona)"><i class="bi bi-trash"></i></a>
+                            </td>
+                        </tr>
+                    }
                 </tbody>
             </table>
             <!-- Aquí termina la tabla -->
