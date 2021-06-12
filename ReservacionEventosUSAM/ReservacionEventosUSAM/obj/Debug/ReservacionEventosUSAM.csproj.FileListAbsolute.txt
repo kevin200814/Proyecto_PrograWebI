@@ -165,3 +165,4 @@ C:\Users\kevin\Documents\Visual Studio 2015\repos\Proyecto_PrograWebI\Reservacio
 C:\Users\kevin\Documents\Visual Studio 2015\repos\Proyecto_PrograWebI\ReservacionEventosUSAM\ReservacionEventosUSAM\obj\Debug\ReservacionEventosUSAM.dll
 C:\Users\kevin\Documents\Visual Studio 2015\repos\Proyecto_PrograWebI\ReservacionEventosUSAM\ReservacionEventosUSAM\obj\Debug\ReservacionEventosUSAM.pdb
 C:\Users\kevin\Documents\Visual Studio 2015\repos\Proyecto_PrograWebI\ReservacionEventosUSAM\ReservacionEventosUSAM\obj\Debug\ReservacionEventosUSAM.csprojResolveAssemblyReference.cache
+C:\Users\Alexis\Desktop\Programacion web I\Proyectos\Proyecto_PrograWebI\ReservacionEventosUSAM\ReservacionEventosUSAM\obj\Debug\ReservacionEventosUSAM.csprojResolveAssemblyReference.cache

@@ -1,4 +1,4 @@
-﻿
+﻿@model List < ReservacionEventosUSAM.Models.CRUD.UsuariosMostrar >
 @{
     ViewBag.Title = "ConsultarUsuarios";
     Layout = "~/Views/Shared/_Layout.cshtml";
@@ -17,9 +17,6 @@
             </li>
             <li class="nav-item">
                 <a class="nav-link" href="@Url.Content("~/Lugares/ConsultarLugares")">Lugares <i class="bi bi-geo-alt-fill"></i></a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link " href="@Url.Content("~/Personas/ConsultarPersonas")">Personas <i class="bi bi-people-fill"></i></a>
             </li>
             <li class="nav-item">
                 <a class="nav-link active" href="@Url.Content("~/Usuarios/ConsultarUsuarios")">Usuarios <i class="bi bi-people-fill"></i></a>
@@ -41,6 +38,9 @@
             </li>
             <li class="nav-item">
                 <a class="nav-link" href="@Url.Content("~/Tipo_persona/ConsultarTipoPersona")">Tipo persona <i class="bi bi-person-bounding-box"></i></a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link " href="@Url.Content("~/PersonaEventos/ConsultarPersonaEvento")">Persona Eventos<i class="bi bi-person-bounding-box"></i></a>
             </li>
             <li class="nav-item">
                 <a class="nav-link" href="@Url.Content("~/Registros/ConsultarRegistro")">Registros <i class="bi bi-person-lines-fill"></i></a>
@@ -72,18 +72,21 @@
                     </tr>
                 </thead>
                 <tbody>
+
+                    @foreach (var user in Model) { 
                     <tr>
-                        <th scope="row">3</th>
-                        <td>Juan</td>
-                        <td>Rivera</td>
-                        <td>7172-9900</td>
-                        <td>Estudiante</td>
+                        <th scope="row">@user.id_usuario</th>
+                        <td>@user.usuario</td>
+                        <td>@user.contrasena_usuario</td>
+                        <td>@user.cod_estado</td>
+                        <td>@user.id_rol</td>
                         <td>
-                            <button class="btn btn-primary"><i class="bi bi-pencil-square"></i></button>
-                            <button class="btn btn-danger"><i class="bi bi-trash"></i></button>
+                            <a class="btn btn-primary" onclick="document.location.href='@Url.Content("~/Usuarios/ActualizarUsuarios/"+user.id_usuario)'"><i class="bi bi-pencil-square"></i></a>
+                            <a class="btn btn-danger" onclick="document.location.href='@Url.Content("~/Usuarios/BorrarU/"+user.id_usuario)'"><i class="bi bi-trash"></i></a>
                         </td>
                     </tr>
-                </tbody>
+                    } 
+</tbody>
             </table>
             <!-- Aquí termina la tabla -->
         </div>
