@@ -71,7 +71,7 @@ namespace ReservacionEventosUSAM.Controllers
         [Autoriza(objOperacion: 3)]
         public ActionResult ActualizarRegistro(int? id)
         {
-            registro_inscripcion modelo = new registro_inscripcion();
+            RegistroInscripcionUpdate modelo = new RegistroInscripcionUpdate();
 
             using (var bDatos = new ReservacionEventos2021Entities())
             {

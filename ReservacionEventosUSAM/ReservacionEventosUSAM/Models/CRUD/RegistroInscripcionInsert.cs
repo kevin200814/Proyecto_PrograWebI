@@ -12,7 +12,8 @@ namespace ReservacionEventosUSAM.Models.CRUD
         [StringLength(50, ErrorMessage = "El {0} debe tener al menos {1} caracteres", MinimumLength = 1)]
 
       
-        public int id_reservacion { get; set; }
+       
+
         [Display(Name = "nombre")]
         public string nombres_persona { get; set; }
 
@@ -28,6 +29,6 @@ namespace ReservacionEventosUSAM.Models.CRUD
         [Display(Name = "correo")]
         public string correo_persona { get; set; } 
         public int id_tipo_persona { get; set; }
-       
+        public int id_reservacion { get; set; }
     }
 }
