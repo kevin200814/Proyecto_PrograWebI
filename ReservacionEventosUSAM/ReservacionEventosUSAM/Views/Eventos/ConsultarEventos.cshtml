@@ -1,108 +1,110 @@
-﻿
-@{
-    ViewBag.Title = "ConsultarEventos";
-    Layout = "~/Views/Shared/_Layout.cshtml";
-}
+﻿@model List<ReservacionEventosUSAM.Models.CRUD.EVENTOvista>
+    @{
+        ViewBag.Title = "ConsultarEventos";
+        Layout = "~/Views/Shared/_Layout.cshtml";
+    }
 
 
-<div class="card text-center">
-    <div class="card-header">
-        <div class="alert alert-info" role="alert">
-            <b><h3>Panel de Administración</h3></b>
+    <div class="card text-center">
+        <div class="card-header">
+            <div class="alert alert-info" role="alert">
+                <b><h3>Panel de Administración</h3></b>
+            </div>
+
+            <ul class="nav nav-tabs card-header-tabs">
+                <li class="nav-item">
+                    <a class="nav-link active" aria-current="true" href="@Url.Content("~/Eventos/ConsultarEventos")">Eventos <i class="bi bi-calendar2-event-fill"></i></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="@Url.Content("~/Lugares/ConsultarLugares")">Lugares <i class="bi bi-geo-alt-fill"></i></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link " href="@Url.Content("~/Usuarios/ConsultarUsuarios")">Usuarios <i class="bi bi-people-fill"></i></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="@Url.Content("~/TipoEstado/ConsultarTipoEstado")">Tipo estado<i class="bi bi-person-bounding-box"></i></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="@Url.Content("~/RolOpera/ConsultarRolOpera")">Rol opera<i class="bi bi-person-bounding-box"></i></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="@Url.Content("~/Operaciones/ConsultarOperacion")">operaciones<i class="bi bi-person-bounding-box"></i></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="@Url.Content("~/Modulos/ConsultarModulos")">Modulos<i class="bi bi-person-bounding-box"></i></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="@Url.Content("~/Tipo_evento/ConsultarTipoEvento")">Tipo evento <i class="bi bi-calendar2-event"></i></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="@Url.Content("~/Tipo_persona/ConsultarTipoPersona")">Tipo persona <i class="bi bi-person-bounding-box"></i></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link " href="@Url.Content("~/PersonaEventos/ConsultarPersonaEvento")">Persona Eventos<i class="bi bi-person-bounding-box"></i></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="@Url.Content("~/Registros/ConsultarRegistro")">Registros <i class="bi bi-person-lines-fill"></i></a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="@Url.Content("~/Roles/ConsultarRoles")">Roles <i class="bi bi-toggle2-on"></i></a>
+                </li>
+            </ul>
         </div>
 
-        <ul class="nav nav-tabs card-header-tabs">
-            <li class="nav-item">
-                <a class="nav-link active" aria-current="true" href="@Url.Content("~/Eventos/ConsultarEventos")">Eventos <i class="bi bi-calendar2-event-fill"></i></a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="@Url.Content("~/Lugares/ConsultarLugares")">Lugares <i class="bi bi-geo-alt-fill"></i></a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link " href="@Url.Content("~/Personas/ConsultarPersonas")">Personas <i class="bi bi-people-fill"></i></a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link " href="@Url.Content("~/Usuarios/ConsultarUsuarios")">Usuarios <i class="bi bi-people-fill"></i></a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="@Url.Content("~/TipoEstado/ConsultarTipoEstado")">Tipo estado<i class="bi bi-person-bounding-box"></i></a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="@Url.Content("~/RolOpera/ConsultarRolOpera")">Rol opera<i class="bi bi-person-bounding-box"></i></a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="@Url.Content("~/Operaciones/ConsultarOperacion")">operaciones<i class="bi bi-person-bounding-box"></i></a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="@Url.Content("~/Modulos/ConsultarModulos")">Modulos<i class="bi bi-person-bounding-box"></i></a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="@Url.Content("~/Tipo_evento/ConsultarTipoEvento")">Tipo evento <i class="bi bi-calendar2-event"></i></a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="@Url.Content("~/Tipo_persona/ConsultarTipoPersona")">Tipo persona <i class="bi bi-person-bounding-box"></i></a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="@Url.Content("~/Registros/ConsultarRegistro")">Registros <i class="bi bi-person-lines-fill"></i></a>
-            </li>
-
-            <li class="nav-item">
-                <a class="nav-link" href="@Url.Content("~/Roles/ConsultarRoles")">Roles <i class="bi bi-toggle2-on"></i></a>
-            </li>
-        </ul>
-    </div>
-
-    <div class="card-body">
-        <br />
-
-        <div class="table-responsive">
-            <!--Boton de agregar-->
-            <button class="btn btn-primary float-start text-light" onclick="document.location.href='@Url.Content("~/Eventos/AgregarEvento")'">Nuevo Evento</button>
+        <div class="card-body">
             <br />
-            <!-- Aquí va la tabla ¡No olviden poner el id a la tabla!-->
-            <table id="table" class="table">
-                <thead>
-                    <tr>
-                        <th scope="col">#</th>
-                        <th scope="col">Titulo de Evento</th>
-                        <th scope="col">Fecha de Evento</th>
-                        <th scope="col">Inicio Evento</th>
-                        <th scope="col">Fin Evento</th>
-                        <th scope="col">Duracion</th>
-                        <th scope="col">Descripcion</th>
-                        <th scope="col">Tipo de Evento</th>
-                        <th scope="col">Personas</th>
-                        <th scope="col">Local</th>
-                        <th scope="col">Estado</th>
-                        <th scope="col">Tipo Personas</th>
-                        <th scope="col">Acciones</th>
-                    </tr>
-                </thead>
 
-                <tbody>
-                   
-                    <tr>
-                        <th scope="col">#</th>
-                        <td scope="col">Titulo de Evento</td>
-                        <td scope="col">Fecha de Evento</td>
-                        <td scope="col">Inicio Evento</td>
-                        <td scope="col">Fin Evento</td>
-                        <td scope="col">Duracion</td>
-                        <td scope="col">Descripcion</td>
-                        <td scope="col">Tipo de Evento</td>
-                        <td scope="col">Personas</td>
-                        <td scope="col">Local</td>
-                        <td scope="col">Estado</td>
-                        <td scope="col">Tipo Personas</td>
-                         <td>
-                            <button class="btn btn-primary"><i class="bi bi-pencil-square"></i></button>
-                            <button class="btn btn-danger"><i class="bi bi-trash"></i></button>
-                        </td>
-                    </tr>
-                </tbody>
-            </table>
-            <!-- Aquí termina la tabla -->
+            <div class="table-responsive">
+                <!--Boton de agregar-->
+                <button class="btn btn-primary float-start text-light" onclick="document.location.href='@Url.Content("~/Eventos/AgregarEvento")'">Nuevo Evento</button>
+                <br />
+                <!-- Aquí va la tabla ¡No olviden poner el id a la tabla!-->
+                <table id="table" class="table">
+                    <thead>
+                        <tr>
+                            <th scope="col">#</th>
+                            <th scope="col">Titulo de Evento</th>
+                            <th scope="col">Fecha de Evento</th>
+                            <th scope="col">Inicio Evento</th>
+                            <th scope="col">Fin Evento</th>
+                            <th scope="col">Duracion</th>
+                            <th scope="col">Descripcion</th>
+                            <th scope="col">Tipo de Evento</th>
+                            <th scope="col">Personas</th>
+                            <th scope="col">Local</th>
+                            <th scope="col">Estado</th>
+                            <th scope="col">Tipo Personas</th>
+                            <th scope="col">Acciones</th>
+                        </tr>
+                    </thead>
+
+                    <tbody>
+                        @foreach (var obj in Model)
+                        {
+                            <tr>
+                                <td>@obj.id_reservacion</td>
+                                <td>@obj.titulo_evento</td>
+                                <td>@obj.fecha_evento</td>
+                                <td>@obj.inicio_hora_evento</td>
+                                <td>@obj.fin_hora_evento</td>
+                                <td>@obj.duracion_evento</td>
+                                <td>@obj.descripcion_evento</td>
+                                <td>@obj.id_tipo_evento</td>
+                                <td>@obj.id_persona</td>
+                                <td>@obj.id_local</td>
+                                <td>@obj.estado_evento</td>
+                                <td>@obj.tipo_persona</td>
+                                <td>
+                                    <a class="btn btn-primary" href="@Url.Content("~/Eventos/ActualizarEvento/"+obj.id_reservacion)"><i class="bi bi-pencil-square"></i></a>
+                                    <a class="btn btn-danger" href="@Url.Content("~/Eventos/Delete/"+obj.id_reservacion)"><i class="bi bi-trash"></i></a>
+                                </td>
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+                <!-- Aquí termina la tabla -->
+            </div>
+
         </div>
-
     </div>
-</div>

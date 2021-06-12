@@ -1,0 +1,48 @@
+﻿@model ReservacionEventosUSAM.Models.CRUD.RolesUpdate
+
+@{
+    ViewBag.Title = "ActualizarRoles";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>ActualizarRoles</h2>
+<div class="container">
+    <br />
+    <div class="card text-center">
+        <div class="card-header">
+            <ul class="nav nav-tabs card-header-tabs">
+                <li class="nav-item">
+                    <a class="nav-link active" aria-current="true" href="#">Roles <i class="bi bi-calendar2-event-fill"></i></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="@Url.Content("~/Roles/ConsultarRoles")">Mostrar Roles <i class="bi bi-list-stars"></i></a>
+                </li>
+            </ul>
+        </div>
+        <div class="card-body">
+            <h5 class="card-title">Nuevo Rol</h5>
+
+            @using (Html.BeginForm("ActualizarRoles", "Roles", FormMethod.Post, new { role = "form", @class = "" }))
+            {
+
+                <div class="row">
+                    <div class="col-md-3">
+                        <div class="input-group">
+                            @Html.HiddenFor(d => d.id_rol )
+
+
+                            @Html.LabelFor(d => d.rol, new { @class = "input-group-text" })
+                            @Html.TextBoxFor(d => d.rol, new { @class = "form-control" })
+
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="card-footer">
+                    <button class="btn btn-primary">GUARDAR <i class="bi bi-sd-card"></i></button>
+                    <button class="btn btn-danger">DESCARTAR <i class="bi bi-trash"></i></button>
+                </div>
+            }
+        </div>
+    </div>

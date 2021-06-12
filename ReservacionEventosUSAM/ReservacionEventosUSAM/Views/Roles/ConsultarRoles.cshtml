@@ -1,4 +1,4 @@
-﻿
+﻿@model List <ReservacionEventosUSAM.Models.CRUD.RolesMostrar >
 @{
     ViewBag.Title = "ConsultarRoles";
     Layout = "~/Views/Shared/_Layout.cshtml";
@@ -17,9 +17,6 @@
             </li>
             <li class="nav-item">
                 <a class="nav-link" href="@Url.Content("~/Lugares/ConsultarLugares")">Lugares <i class="bi bi-geo-alt-fill"></i></a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link " href="@Url.Content("~/Personas/ConsultarPersonas")">Personas <i class="bi bi-people-fill"></i></a>
             </li>
             <li class="nav-item">
                 <a class="nav-link " href="@Url.Content("~/Usuarios/ConsultarUsuarios")">Usuarios <i class="bi bi-people-fill"></i></a>
@@ -41,6 +38,9 @@
             </li>
             <li class="nav-item">
                 <a class="nav-link" href="@Url.Content("~/Tipo_persona/ConsultarTipoPersona")">Tipo persona <i class="bi bi-person-bounding-box"></i></a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link " href="@Url.Content("~/PersonaEventos/ConsultarPersonaEvento")">Persona Eventos<i class="bi bi-person-bounding-box"></i></a>
             </li>
             <li class="nav-item">
                 <a class="nav-link" href="@Url.Content("~/Registros/ConsultarRegistro")">Registros <i class="bi bi-person-lines-fill"></i></a>
@@ -69,16 +69,18 @@
                     </tr>
                 </thead>
                 <tbody>
-                    
+                    @foreach (var r in Model ){
+                   
                     <tr>
-                        <th scope="row">3</th>
-                        <td>Juan</td>
+                        <th scope="row">@r.id_rol</th>
+                        <td>@r.rol</td>
 
                         <td>
-                            <button class="btn btn-primary"><i class="bi bi-pencil-square"></i></button>
-                            <button class="btn btn-danger"><i class="bi bi-trash"></i></button>
-                        </td>
+                            <a class="btn btn-primary" onclick="document.location.href='@Url.Content("~/Roles/ActualizarRoles/"+r.id_rol)'"><i class="bi bi-pencil-square"></i></a>
+                            <a  class="btn btn-danger" onclick="document.location.href='@Url.Content("~/Roles/Delete/"+r.id_rol)'" ><i class="bi bi-trash"></i></a>
+                        </td>  
                     </tr>
+                    }
                 </tbody>
             </table>
             <!-- Aquí termina la tabla -->
