@@ -218,6 +218,7 @@
     <Compile Include="Controllers\LugaresController.cs" />
     <Compile Include="Controllers\ModulosController.cs" />
     <Compile Include="Controllers\OperacionesController.cs" />
+    <Compile Include="Controllers\PersonaEventosController.cs" />
     <Compile Include="Controllers\PersonasController.cs" />
     <Compile Include="Controllers\RegistrosController.cs" />
     <Compile Include="Controllers\RolesController.cs" />
@@ -266,9 +267,15 @@
     <Compile Include="Models\CRUD\OperacionInsert.cs" />
     <Compile Include="Models\CRUD\OperacionUpdate.cs" />
     <Compile Include="Models\CRUD\OPERACIONvista.cs" />
+    <Compile Include="Models\CRUD\PersonaEventosUpdate.cs" />
+    <Compile Include="Models\CRUD\PersonaEventosInsert.cs" />
+    <Compile Include="Models\CRUD\PersonaEventosVista.cs" />
     <Compile Include="Models\CRUD\persona_eventos.cs">
       <DependentUpon>BDReservacionEventos.tt</DependentUpon>
     </Compile>
+    <Compile Include="Models\CRUD\RegistroInscripcionUpdate.cs" />
+    <Compile Include="Models\CRUD\RegistroInscripcionInsert.cs" />
+    <Compile Include="Models\CRUD\RegistroInscripcionVista.cs" />
     <Compile Include="Models\CRUD\registro_inscripcion.cs">
       <DependentUpon>BDReservacionEventos.tt</DependentUpon>
     </Compile>
@@ -288,8 +295,14 @@
     <Compile Include="Models\CRUD\sysdiagrams.cs">
       <DependentUpon>BDReservacionEventos.tt</DependentUpon>
     </Compile>
+<<<<<<< HEAD
     <Compile Include="Models\CRUD\TipoEventocrudInsert.cs" />
     <Compile Include="Models\CRUD\TIPOEVENTOvista.cs" />
+=======
+    <Compile Include="Models\CRUD\TipoPersonaUpdate.cs" />
+    <Compile Include="Models\CRUD\TipoPersonaInsert.cs" />
+    <Compile Include="Models\CRUD\TipoPersonaVista.cs" />
+>>>>>>> main
     <Compile Include="Models\CRUD\tipo_evento.cs">
       <DependentUpon>BDReservacionEventos.tt</DependentUpon>
     </Compile>
@@ -333,12 +346,22 @@
     <Content Include="Views\Operaciones\ActualizarOperacion.cshtml" />
     <Content Include="Views\RolOpera\AgregarRolOpera.cshtml" />
     <Content Include="Views\RolOpera\ActualizarRolOpera.cshtml" />
+<<<<<<< HEAD
     <Content Include="Views\Eventos\AgregarEvento.cshtml" />
     <Content Include="Views\Eventos\ActualizarEvento.cshtml" />
     <Content Include="Views\Tipo_evento\AgregarTipoEvento.cshtml" />
     <Content Include="Views\Tipo_evento\ActualizarTipoEvento.cshtml" />
     <Content Include="Views\Lugares\AgregarLocal.cshtml" />
     <Content Include="Views\Lugares\ActualizarLugares.cshtml" />
+=======
+    <Content Include="Views\Tipo_persona\AgregarTipoPersona.cshtml" />
+    <Content Include="Views\Tipo_persona\ActualizarTipoPersona.cshtml" />
+    <Content Include="Views\PersonaEventos\ConsultarPersonaEvento.cshtml" />
+    <Content Include="Views\PersonaEventos\AgregarPersonaEvento.cshtml" />
+    <Content Include="Views\PersonaEventos\ActualizarPersonaEvento.cshtml" />
+    <Content Include="Views\Registros\AgregarRegistro.cshtml" />
+    <Content Include="Views\Registros\ActualizarRegistro.cshtml" />
+>>>>>>> main
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

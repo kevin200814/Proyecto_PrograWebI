@@ -1,0 +1,48 @@
+﻿@model ReservacionEventosUSAM.Models.CRUD.RegistroInscripcionInsert
+@{
+    ViewBag.Title = "AgregarRegistro";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+@using (Html.BeginForm("AgregarRegistro", "Registros", FormMethod.Post, new { role = "form", @class = "" }))
+{
+    <div class="card">
+        <div class="card-header">
+            <h2>Agregar Registro Inscripcion</h2>
+        </div>
+        <div class="card-body">
+            @Html.AntiForgeryToken()
+
+            @Html.ValidationMessage("error", new { @class = "tex-danger" })
+            <br />
+            @Html.LabelFor(d => d.id_reservacion)
+            @Html.TextBoxFor(d => d.id_reservacion, new { @class = "form-control" })
+            <br />
+            @Html.LabelFor(d => d.nombres_persona)
+            @Html.TextBoxFor(d => d.nombres_persona, new { @class = "form-control" })
+            @Html.ValidationMessage("nombre", new { @class = "text-danger" })
+            <br />
+            @Html.LabelFor(d => d.apellidos_persona)
+            @Html.TextBoxFor(d => d.apellidos_persona, new { @class = "form-control" })
+            @Html.ValidationMessage("apellido", new { @class = "text-danger" })
+            <br />
+            @Html.LabelFor(d => d.telefono_persona)
+            @Html.TextBoxFor(d => d.telefono_persona, new { @class = "form-control" })
+            @Html.ValidationMessage("telefono", new { @class = "text-danger" })
+            <br />
+            @Html.LabelFor(d => d.correo_persona)
+            @Html.TextBoxFor(d => d.correo_persona, new { @class = "form-control" })
+            @Html.ValidationMessage("correo", new { @class = "text-danger" })
+            <br />
+            @Html.LabelFor(d => d.id_tipo_persona)
+            @Html.TextBoxFor(d => d.id_tipo_persona, new { @class = "form-control" })
+            
+
+        </div>
+        <div class="card-footer">
+            <input type="submit" class="btn btn-success" value="Guardar" />
+            <a class="btn btn-danger" href="@Url.Content("~/Registros/ConsultarRegistro/")">Cancelar</a>
+        </div>
+    </div>
+}

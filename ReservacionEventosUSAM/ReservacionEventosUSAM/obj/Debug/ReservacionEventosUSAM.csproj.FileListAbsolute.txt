@@ -107,7 +107,6 @@ C:\Users\Alexis\Desktop\Programacion web I\Proyectos\Proyecto_PrograWebI\Reserva
 C:\Users\Alexis\Desktop\Programacion web I\Proyectos\Proyecto_PrograWebI\ReservacionEventosUSAM\ReservacionEventosUSAM\bin\es\System.Web.Webpages.Razor.resources.dll
 C:\Users\Alexis\Desktop\Programacion web I\Proyectos\Proyecto_PrograWebI\ReservacionEventosUSAM\ReservacionEventosUSAM\bin\es\System.Web.Helpers.resources.dll
 C:\Users\Alexis\Desktop\Programacion web I\Proyectos\Proyecto_PrograWebI\ReservacionEventosUSAM\ReservacionEventosUSAM\bin\es\System.Web.Mvc.resources.dll
-C:\Users\Alexis\Desktop\Programacion web I\Proyectos\Proyecto_PrograWebI\ReservacionEventosUSAM\ReservacionEventosUSAM\obj\Debug\ReservacionEventosUSAM.csprojResolveAssemblyReference.cache
 C:\Users\Alexis\Desktop\Programacion web I\Proyectos\Proyecto_PrograWebI\ReservacionEventosUSAM\ReservacionEventosUSAM\obj\Debug\ReservacionEventosUSAM.dll
 C:\Users\Alexis\Desktop\Programacion web I\Proyectos\Proyecto_PrograWebI\ReservacionEventosUSAM\ReservacionEventosUSAM\obj\Debug\ReservacionEventosUSAM.pdb
 C:\Users\kevin\Documents\Visual Studio 2015\repos\Proyecto_PrograWebI\ReservacionEventosUSAM\ReservacionEventosUSAM\bin\ApplicationInsights.config
