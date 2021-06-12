@@ -1,0 +1,47 @@
+﻿@model ReservacionEventosUSAM.Models.CRUD.TipoEventocrudInsert
+@{
+    ViewBag.Title = "AgregarTipoEvento";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>AgregarTipoEvento</h2>
+
+@using (Html.BeginForm("AgregarTipoEvento", "Tipo_evento", FormMethod.Post, new { role = "form", @class = "" }))
+{
+    /*@Url.Content("~/Modulos/ConsultarModulos/")
+     @Html.AntiForgeryToken()*/
+
+    <div class="container">
+        <br />
+        <div class="card text-center">
+            <div class="card-body">
+                <h5 class="card-title">Nuevo Tipo de Evento</h5>
+
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="input-group">
+                            <span class="input-group-text" id="basic-addon1">Nombre</span>
+                            @Html.TextBoxFor(d => d.nombre_evento, new { @class = "form-control", @type = "text", @placeholder = "Nombre evento" })
+                        </div>
+                    </div>
+
+                    <div class="col-md-6">
+                        <div class="input-group">
+                            <span class="input-group-text" id="basic-addon1">Descripcion</span>
+                            @Html.TextAreaFor(d => d.descripcion_evento, new { @class = "form-control", @placeholder = "Nombre evento" })
+                        </div>
+                    </div>
+                </div>
+
+
+            </div>
+            <div class="card-footer">
+                <input type="submit" class="btn btn-primary" value="Guardar Evento" />
+                <a class="btn btn-danger" href="@Url.Content("~/Tipo_evento/ConsultarTipoEvento/")">Descartar Evento</a>
+            </div>
+        </div>
+    </div>
+
+
+}
+

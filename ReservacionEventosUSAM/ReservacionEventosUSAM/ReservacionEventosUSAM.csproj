@@ -219,7 +219,6 @@
     <Compile Include="Controllers\ModulosController.cs" />
     <Compile Include="Controllers\OperacionesController.cs" />
     <Compile Include="Controllers\PersonaEventosController.cs" />
-    <Compile Include="Controllers\PersonasController.cs" />
     <Compile Include="Controllers\RegistrosController.cs" />
     <Compile Include="Controllers\RolesController.cs" />
     <Compile Include="Controllers\RolOperaController.cs" />
@@ -246,6 +245,10 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>BDReservacionEventos.edmx</DependentUpon>
     </Compile>
+    <Compile Include="Models\CRUD\EventocrudInsert.cs" />
+    <Compile Include="Models\CRUD\EVENTOvista.cs" />
+    <Compile Include="Models\CRUD\LocalcrudInsert.cs" />
+    <Compile Include="Models\CRUD\LOCALvista.cs" />
     <Compile Include="Models\CRUD\local_evento.cs">
       <DependentUpon>BDReservacionEventos.tt</DependentUpon>
     </Compile>
@@ -256,6 +259,7 @@
     <Compile Include="Models\CRUD\ModulosInsert.cs" />
     <Compile Include="Models\CRUD\MODULOSvista.cs" />
     <Compile Include="Models\CRUD\ModuloUpdate.cs" />
+    <Compile Include="Models\CRUD\MostrarTipoEstado.cs" />
     <Compile Include="Models\CRUD\Operacioncrud.cs" />
     <Compile Include="Models\CRUD\operaciones.cs">
       <DependentUpon>BDReservacionEventos.tt</DependentUpon>
@@ -281,6 +285,9 @@
     <Compile Include="Models\CRUD\roles.cs">
       <DependentUpon>BDReservacionEventos.tt</DependentUpon>
     </Compile>
+    <Compile Include="Models\CRUD\RolesInsert.cs" />
+    <Compile Include="Models\CRUD\RolesMostrar.cs" />
+    <Compile Include="Models\CRUD\RolesUpdate.cs" />
     <Compile Include="Models\CRUD\rol_opera.cs">
       <DependentUpon>BDReservacionEventos.tt</DependentUpon>
     </Compile>
@@ -291,6 +298,10 @@
     <Compile Include="Models\CRUD\sysdiagrams.cs">
       <DependentUpon>BDReservacionEventos.tt</DependentUpon>
     </Compile>
+    <Compile Include="Models\CRUD\TipoEstadoInsert.cs" />
+    <Compile Include="Models\CRUD\TipoEstadoUpdate.cs" />
+    <Compile Include="Models\CRUD\TipoEventocrudInsert.cs" />
+    <Compile Include="Models\CRUD\TIPOEVENTOvista.cs" />
     <Compile Include="Models\CRUD\TipoPersonaUpdate.cs" />
     <Compile Include="Models\CRUD\TipoPersonaInsert.cs" />
     <Compile Include="Models\CRUD\TipoPersonaVista.cs" />
@@ -303,9 +314,12 @@
     <Compile Include="Models\CRUD\userState.cs">
       <DependentUpon>BDReservacionEventos.tt</DependentUpon>
     </Compile>
+    <Compile Include="Models\CRUD\UsuarioInsert.cs" />
     <Compile Include="Models\CRUD\usuarios.cs">
       <DependentUpon>BDReservacionEventos.tt</DependentUpon>
     </Compile>
+    <Compile Include="Models\CRUD\UsuariosMostrar.cs" />
+    <Compile Include="Models\CRUD\UsuarioUpdate.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -324,7 +338,6 @@
     <Content Include="Views\Tipo_persona\ConsultarTipoPersona.cshtml" />
     <Content Include="Views\Registros\ConsultarRegistro.cshtml" />
     <Content Include="Views\Roles\ConsultarRoles.cshtml" />
-    <Content Include="Views\Personas\ConsultarPersonas.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Usuarios\ConsultarUsuarios.cshtml" />
     <Content Include="Views\TipoEstado\ConsultarTipoEstado.cshtml" />
@@ -344,6 +357,18 @@
     <Content Include="Views\PersonaEventos\ActualizarPersonaEvento.cshtml" />
     <Content Include="Views\Registros\AgregarRegistro.cshtml" />
     <Content Include="Views\Registros\ActualizarRegistro.cshtml" />
+    <Content Include="Views\Eventos\ActualizarEvento.cshtml" />
+    <Content Include="Views\Eventos\AgregarEvento.cshtml" />
+    <Content Include="Views\Tipo_evento\ActualizarTipoEvento.cshtml" />
+    <Content Include="Views\Tipo_evento\AgregarTipoEvento.cshtml" />
+    <Content Include="Views\Lugares\ActualizarLugares.cshtml" />
+    <Content Include="Views\Lugares\AgregarLocal.cshtml" />
+    <Content Include="Views\Roles\ActualizarRoles.cshtml" />
+    <Content Include="Views\Roles\AgregarRoles.cshtml" />
+    <Content Include="Views\TipoEstado\ActualizarTipoEstado.cshtml" />
+    <Content Include="Views\TipoEstado\AgregarTipoEstado.cshtml" />
+    <Content Include="Views\Usuarios\ActualizarUsuarios.cshtml" />
+    <Content Include="Views\Usuarios\AgregarUsuarios.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
