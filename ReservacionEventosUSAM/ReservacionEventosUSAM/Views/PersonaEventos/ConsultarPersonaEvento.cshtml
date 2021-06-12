@@ -1,6 +1,6 @@
-﻿@model List<ReservacionEventosUSAM.Models.CRUD.RegistroInscripcionVista>
+﻿@model  List<ReservacionEventosUSAM.Models.CRUD.PersonaEventosVista>
 @{
-    ViewBag.Title = "ConsultarRegistro";
+    ViewBag.Title = "ConsultarPersonaEvento";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
@@ -40,13 +40,13 @@
                 <a class="nav-link" href="@Url.Content("~/Tipo_evento/ConsultarTipoEvento")">Tipo evento <i class="bi bi-calendar2-event"></i></a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="@Url.Content("~/Tipo_persona/ConsultarTipoPersona")">Tipo persona <i class="bi bi-person-bounding-box"></i></a>
+                <a class="nav-link " href="@Url.Content("~/Tipo_persona/ConsultarTipoPersona")">Tipo persona <i class="bi bi-person-bounding-box"></i></a>
             </li>
             <li class="nav-item">
-                <a class="nav-link " href="@Url.Content("~/PersonaEventos/ConsultarPersonaEvento")">Persona Eventos<i class="bi bi-person-bounding-box"></i></a>
+                <a class="nav-link active" href="@Url.Content("~/PersonaEventos/ConsultarPersonaEvento")">Persona Eventos<i class="bi bi-person-bounding-box"></i></a>
             </li>
             <li class="nav-item">
-                <a class="nav-link active" href="@Url.Content("~/Registros/ConsultarRegistro")">Registros <i class="bi bi-person-lines-fill"></i></a>
+                <a class="nav-link" href="@Url.Content("~/Registros/ConsultarRegistro")">Registros <i class="bi bi-person-lines-fill"></i></a>
             </li>
 
             <li class="nav-item">
@@ -60,36 +60,30 @@
 
         <div class="table-responsive">
             <!--Boton de agregar-->
-            <button class="btn btn-info float-start text-light" onclick="document.location.href='@Url.Content("~/Registros/AgregarRegistro")'">Nuevo registro</button>
+            <button class="btn btn-primary float-start text-light" onclick="document.location.href='@Url.Content("~/PersonaEventos/AgregarPersonaEvento")'">Persona eventos</button>
             <br />
             <!-- Aquí va la tabla ¡No olviden poner el id a la tabla!-->
             <table id="table" class="table">
                 <thead>
                     <tr>
                         <th scope="col">#</th>
-                        <th scope="col">Evento</th>
                         <th scope="col">Nombres</th>
                         <th scope="col">Apellidos</th>
-                        <th scope="col">Telefono</th>
-                        <th scope="col">Correo</th>
-                        <th scope="col">Tipo de persona</th>
+                        <th scope="col">Profesion</th>
                         <th scope="col">Acciones</th>
                     </tr>
                 </thead>
                 <tbody>
-                    @foreach (var objRe in Model)
+                    @foreach (var objPerson in Model)
                     {
                         <tr>
-                            <th scope="row">@objRe.id_inscripcion</th>
-                            <td>@objRe.id_reservacion</td>
-                            <td>@objRe.nombres_persona</td>
-                            <td>@objRe.apellidos_persona</td>
-                            <td>@objRe.telefono_persona</td>
-                            <td>@objRe.correo_persona</td>
-                            <td>@objRe.id_tipo_persona</td>
+                            <th scope="row">@objPerson.id_persona</th>
+                            <td>@objPerson.nombres_persona</td>
+                            <td>@objPerson.apellidos_persona</td>
+                            <td>@objPerson.profesion_persona</td>
                             <td>
-                                <a class="btn btn-primary" href="@Url.Content("~/Registros/ActualizarRegistro/"+objRe.id_inscripcion)"><i class="bi bi-pencil-square"></i></a>
-                                <a class="btn btn-danger" href="@Url.Content("~/Registros/DeleteTipoRegistro/"+objRe.id_inscripcion)"><i class="bi bi-trash"></i></a>
+                                <a class="btn btn-primary" href="@Url.Content("~/PersonaEventos/ActualizarPersonaEvento/"+objPerson.id_persona)"><i class="bi bi-pencil-square"></i></a>
+                                <a class="btn btn-danger" href="@Url.Content("~/PersonaEventos/DeletePersonaEvento/"+objPerson.id_persona)"><i class="bi bi-trash"></i></a>
                             </td>
                         </tr>
                     }

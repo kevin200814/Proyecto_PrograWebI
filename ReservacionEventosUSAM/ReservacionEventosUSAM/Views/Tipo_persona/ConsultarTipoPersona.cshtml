@@ -1,4 +1,4 @@
-﻿
+﻿@model List<ReservacionEventosUSAM.Models.CRUD.TipoPersonaVista>
 @{
     ViewBag.Title = "ConsultarTipoPersona";
     Layout = "~/Views/Shared/_Layout.cshtml";
@@ -43,6 +43,9 @@
                 <a class="nav-link active" href="@Url.Content("~/Tipo_persona/ConsultarTipoPersona")">Tipo persona <i class="bi bi-person-bounding-box"></i></a>
             </li>
             <li class="nav-item">
+                <a class="nav-link " href="@Url.Content("~/PersonaEventos/ConsultarPersonaEvento")">Persona Eventos<i class="bi bi-person-bounding-box"></i></a>
+            </li>
+            <li class="nav-item">
                 <a class="nav-link" href="@Url.Content("~/Registros/ConsultarRegistro")">Registros <i class="bi bi-person-lines-fill"></i></a>
             </li>
 
@@ -70,15 +73,18 @@
                     </tr>
                 </thead>
                 <tbody>
+                  @foreach (var objPerson in Model)
+                  {
                     <tr>
-                        <th scope="row">3</th>
-                        <td>Juan</td>
-                        <td>Rivera</td>
+                        <th scope="row">@objPerson.id_tipo_persona</th>
+                        <td>@objPerson.tipo_persona</td>
+                        <td>@objPerson.costo_pago_evento</td>
                         <td>
-                            <button class="btn btn-primary"><i class="bi bi-pencil-square"></i></button>
-                            <button class="btn btn-danger"><i class="bi bi-trash"></i></button>
+                            <a class="btn btn-primary" href="@Url.Content("~/Tipo_persona/ActualizarTipoPersona/"+objPerson.id_tipo_persona)"><i class="bi bi-pencil-square"></i></a>
+                            <a class="btn btn-danger" href="@Url.Content("~/Tipo_persona/DeleteTipoPersona/"+objPerson.id_tipo_persona)"><i class="bi bi-trash"></i></a>
                         </td>
                     </tr>
+                  }
                 </tbody>
             </table>
             <!-- Aquí termina la tabla -->

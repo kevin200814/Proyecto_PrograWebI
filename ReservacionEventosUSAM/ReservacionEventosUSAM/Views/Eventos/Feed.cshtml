@@ -5,4 +5,35 @@
 }
 
 <h2>Feed</h2>
+    @foreach (var objRe in Model)
+    {
+        <div class="container">
 
+            <div class="card">
+                <div class="card-header">
+                    <h5 class="card-title">Title event</h5>
+                    <p class="text-success float-end"><b>Activo <i class="bi bi-check-circle-fill"></i></b></p>
+                </div>
+                <div class="card-body">
+
+                    <p class="card-text text-justify">
+                        Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+                        tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+                        quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+                        consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+                        cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+                        proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                    </p>
+
+                    <p class="text-success"><b>Fecha de evento:</b> 22-06-2021</p>
+                    <p class="float-end"><b>Enfocado a: </b>Docentes</p>
+                    <a href="#" class="btn btn-success">Ver completo <i class="bi bi-eye-fill"></i></a>
+                    <a href="#" class="btn btn-primary"><i class="bi bi-hand-thumbs-up-fill"></i></a>
+                    <a href="#" class="btn btn-dark"><i class="bi bi-hand-thumbs-down-fill"></i></a>
+                </div>
+            </div>
+
+            <hr />
+        </div>
+    }
+<!-- El codigo que importa final -->
