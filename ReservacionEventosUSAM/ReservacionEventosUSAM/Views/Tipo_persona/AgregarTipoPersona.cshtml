@@ -1,0 +1,32 @@
+﻿@model ReservacionEventosUSAM.Models.CRUD.TipoPersonaInsert
+@{
+    ViewBag.Title = "AgregarTipoPersona";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+@using (Html.BeginForm("AgregarTipoPersona", "Tipo_persona", FormMethod.Post, new { role = "form", @class = "" }))
+{
+    <div class="card">
+        <div class="card-header">
+            <h2>AgregarTipoPersona</h2>
+        </div>
+        <div class="card-body">
+            @Html.AntiForgeryToken()
+
+            @Html.ValidationMessage("error", new { @class = "tex-danger" })
+
+            @Html.LabelFor(d => d.tipo_persona)
+            @Html.TextBoxFor(d => d.tipo_persona, new { @class = "form-control" })
+            @Html.ValidationMessage("persona", new { @class = "text-danger" })
+            <br />
+            @Html.LabelFor(d => d.costo_pago_evento)
+            @Html.TextBoxFor(d => d.costo_pago_evento, new { @class = "form-control" })
+            @Html.ValidationMessage("costo", new { @class = "text-danger" })
+        </div>
+        <div class="card-footer">
+            <input type="submit" class="btn btn-success" value="Guardar" />
+            <a class="btn btn-danger" href="@Url.Content("~/Tipo_persona/ConsultarTipoPersona/")">Cancelar</a>
+        </div>
+    </div>
+}
