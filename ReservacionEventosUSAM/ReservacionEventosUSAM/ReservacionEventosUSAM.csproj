@@ -245,6 +245,10 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>BDReservacionEventos.edmx</DependentUpon>
     </Compile>
+    <Compile Include="Models\CRUD\EventocrudInsert.cs" />
+    <Compile Include="Models\CRUD\EVENTOvista.cs" />
+    <Compile Include="Models\CRUD\LocalcrudInsert.cs" />
+    <Compile Include="Models\CRUD\LOCALvista.cs" />
     <Compile Include="Models\CRUD\local_evento.cs">
       <DependentUpon>BDReservacionEventos.tt</DependentUpon>
     </Compile>
@@ -284,6 +288,8 @@
     <Compile Include="Models\CRUD\sysdiagrams.cs">
       <DependentUpon>BDReservacionEventos.tt</DependentUpon>
     </Compile>
+    <Compile Include="Models\CRUD\TipoEventocrudInsert.cs" />
+    <Compile Include="Models\CRUD\TIPOEVENTOvista.cs" />
     <Compile Include="Models\CRUD\tipo_evento.cs">
       <DependentUpon>BDReservacionEventos.tt</DependentUpon>
     </Compile>
@@ -327,6 +333,12 @@
     <Content Include="Views\Operaciones\ActualizarOperacion.cshtml" />
     <Content Include="Views\RolOpera\AgregarRolOpera.cshtml" />
     <Content Include="Views\RolOpera\ActualizarRolOpera.cshtml" />
+    <Content Include="Views\Eventos\AgregarEvento.cshtml" />
+    <Content Include="Views\Eventos\ActualizarEvento.cshtml" />
+    <Content Include="Views\Tipo_evento\AgregarTipoEvento.cshtml" />
+    <Content Include="Views\Tipo_evento\ActualizarTipoEvento.cshtml" />
+    <Content Include="Views\Lugares\AgregarLocal.cshtml" />
+    <Content Include="Views\Lugares\ActualizarLugares.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

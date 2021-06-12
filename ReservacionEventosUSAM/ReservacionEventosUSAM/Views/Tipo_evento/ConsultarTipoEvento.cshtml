@@ -1,4 +1,4 @@
-﻿
+﻿@model List<ReservacionEventosUSAM.Models.CRUD.TIPOEVENTOvista>
 @{
     ViewBag.Title = "ConsultarTipoEvento";
     Layout = "~/Views/Shared/_Layout.cshtml";
@@ -70,15 +70,19 @@
                     </tr>
                 </thead>
                 <tbody>
-                    <tr>
-                        <th scope="row">3</th>
-                        <td>Juan</td>
-                        <td>Rivera</td>
-                        <td>
-                            <button class="btn btn-primary"><i class="bi bi-pencil-square"></i></button>
-                            <button class="btn btn-danger"><i class="bi bi-trash"></i></button>
-                        </td>
-                    </tr>
+                    @foreach (var obj in Model)
+                    {
+                        <tr>
+                            <td>@obj.id_tipo_evento</td>
+                            <td>@obj.nombre_evento</td>
+                            <td>@obj.descripcion_evento</td>
+                            
+                            <td>
+                                <a class="btn btn-primary" href="@Url.Content("~/Tipo_evento/ActualizarTipoEvento/"+obj.id_tipo_evento)"><i class="bi bi-pencil-square"></i></a>
+                                <a class="btn btn-danger" href="@Url.Content("~/Tipo_evento/Delete/"+obj.id_tipo_evento)"><i class="bi bi-trash"></i></a>
+                            </td>
+                        </tr>
+                    }
                 </tbody>
             </table>
             <!-- Aquí termina la tabla -->

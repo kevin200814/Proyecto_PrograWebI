@@ -1,4 +1,4 @@
-﻿
+﻿@model List<ReservacionEventosUSAM.Models.CRUD.LOCALvista>
 @{
     ViewBag.Title = "ConsultarLugares";
     Layout = "~/Views/Shared/_Layout.cshtml";
@@ -57,7 +57,7 @@
 
         <div class="table-responsive">
             <!--Boton de agregar-->
-            <button class="btn btn-info float-start text-light" onclick="document.location.href='@Url.Content("~/Lugares/AgregarLugar")'">Nuevo Lugar</button>
+            <button class="btn btn-info float-start text-light" onclick="document.location.href='@Url.Content("~/Lugares/AgregarLocal")'">Nuevo Lugar</button>
             <br />
             <!-- Aquí va la tabla ¡No olviden poner el id a la tabla!-->
             <table id="table" class="table">
@@ -69,14 +69,18 @@
                     </tr>
                 </thead>
                 <tbody>
-                    <tr>
-                        <th scope="row">3</th>
-                        <td>Juan</td>
-                        <td>
-                            <button class="btn btn-primary"><i class="bi bi-pencil-square"></i></button>
-                            <button class="btn btn-danger"><i class="bi bi-trash"></i></button>
-                        </td>
-                    </tr>
+                    @foreach (var obj in Model)
+                    {
+                        <tr>
+                            <td>@obj.id_local</td>
+                            <td>@obj.nombre_local</td>
+
+                            <td>
+                                <a class="btn btn-primary" href="@Url.Content("~/Lugares/ActualizarLugares/"+obj.id_local)"><i class="bi bi-pencil-square"></i></a>
+                                <a class="btn btn-danger" href="@Url.Content("~/Lugares/Delete/"+obj.id_local)"><i class="bi bi-trash"></i></a>
+                            </td>
+                        </tr>
+                    }
                 </tbody>
             </table>
             <!-- Aquí termina la tabla -->
