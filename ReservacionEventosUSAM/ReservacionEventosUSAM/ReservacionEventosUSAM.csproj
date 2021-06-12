@@ -269,6 +269,9 @@
     <Compile Include="Models\CRUD\persona_eventos.cs">
       <DependentUpon>BDReservacionEventos.tt</DependentUpon>
     </Compile>
+    <Compile Include="Models\CRUD\RegistroInscripcionUpdate.cs" />
+    <Compile Include="Models\CRUD\RegistroInscripcionInsert.cs" />
+    <Compile Include="Models\CRUD\RegistroInscripcionVista.cs" />
     <Compile Include="Models\CRUD\registro_inscripcion.cs">
       <DependentUpon>BDReservacionEventos.tt</DependentUpon>
     </Compile>
@@ -339,6 +342,8 @@
     <Content Include="Views\PersonaEventos\ConsultarPersonaEvento.cshtml" />
     <Content Include="Views\PersonaEventos\AgregarPersonaEvento.cshtml" />
     <Content Include="Views\PersonaEventos\ActualizarPersonaEvento.cshtml" />
+    <Content Include="Views\Registros\AgregarRegistro.cshtml" />
+    <Content Include="Views\Registros\ActualizarRegistro.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
