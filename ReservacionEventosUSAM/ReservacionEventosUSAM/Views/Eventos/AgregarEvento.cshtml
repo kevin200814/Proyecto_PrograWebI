@@ -1,0 +1,127 @@
+﻿@model ReservacionEventosUSAM.Models.CRUD.EventocrudInsert
+@{
+    ViewBag.Title = "AgregarEvento";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>AgregarEvento</h2>
+
+
+@using (Html.BeginForm("AgregarEvento", "Eventos", FormMethod.Post, new { role = "form", @class = "" }))
+{
+    /*@Url.Content("~/Modulos/ConsultarModulos/")
+     @Html.AntiForgeryToken()*/
+
+    <div class="container">
+        <br />
+        <div class="card text-center">
+            <div class="card-body">
+                <h5 class="card-title">Nuevo Evento</h5>
+
+                <div class="row">
+                    <div class="col-md-3">
+                        <div class="input-group">
+                            <span class="input-group-text" id="basic-addon1">Titulo</span>
+                            @Html.TextBoxFor(d => d.titulo_evento, new { @class = "form-control", @type = "text", @placeholder = "Titulo"})
+                        </div>
+                    </div>
+
+                    <div class="col-md-3">
+                        <div class="input-group">
+                            <span class="input-group-text" id="basic-addon1">Fecha</span>
+                            @Html.TextBoxFor(d => d.fecha_evento, new { @class = "form-control", @type = "date"})
+                        </div>
+                    </div>
+
+                    <div class="col-md-3">
+                        <div class="input-group">
+                            <span class="input-group-text" id="basic-addon1">Hora Inicio</span>
+                            @Html.TextBoxFor(d => d.inicio_hora_evento, new { @class = "form-control", @type = "text", @placeholder = "00:00" })
+                        </div>
+                    </div>
+
+                    <div class="col-md-3">
+                        <div class="input-group">
+                            <span class="input-group-text" id="basic-addon1">Hora Fin</span>
+                            @Html.TextBoxFor(d => d.fin_hora_evento, new { @class = "form-control", @type = "text", @placeholder = "00:00" })
+                        </div>
+                    </div>
+
+                </div>
+                <hr />
+                <div class="row">
+                    <div class="col-md-3">
+                        <div class="input-group">
+                            <span class="input-group-text" id="basic-addon1">Duración</span>
+                            @Html.TextBoxFor(d => d.duracion_evento, new { @class = "form-control", @type = "text" , @placeholder = "00:00" })
+                        </div>
+                    </div>
+
+                    <div class="col-md-3">
+                        <div class="input-group">
+                            <span class="input-group-text" id="basic-addon1">Lugar</span>
+                            @Html.TextBoxFor(d => d.id_local, new { @class = "form-control", @type = "text", @placeholder = "Lugar" })
+                        </div>
+                    </div>
+
+                    <div class="col-md-3">
+                        <div class="input-group">
+                            <span class="input-group-text" id="basic-addon1">
+                                Dirigido
+                            </span>
+                            @Html.TextBoxFor(d => d.id_persona, new { @class = "form-control", @type = "text", @placeholder = "Publico" })
+                        </div>
+                    </div>
+
+                    <div class="col-md-3">
+                        <div class="input-group">
+                            <span class="input-group-text" id="basic-addon1">
+                                Tipo de evento
+                            </span>
+                            @Html.TextBoxFor(d => d.id_tipo_evento, new { @class = "form-control", @type = "text", @placeholder = "Tipo" })
+                        </div>
+                    </div>
+
+
+                </div>
+                <hr />
+
+                <div class="row">
+
+                    <div class="col-md-6">
+                        <div class="input-group">
+                            <span class="input-group-text" id="basic-addon1">Estado</span>
+                            @Html.TextBoxFor(d => d.estado_evento, new { @class = "form-control", @type = "text", @placeholder = "Estado" })
+                        </div>
+                    </div>
+
+                    <div class="col-md-6">
+                        <div class="input-group">
+                            <span class="input-group-text" id="basic-addon1">Persona</span>
+                            @Html.TextBoxFor(d => d.tipo_persona, new { @class = "form-control", @type = "text", @placeholder = "Persona" })
+                        </div>
+                    </div>
+                </div>
+                <hr />
+
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="input-group">
+                            <span class="input-group-text" id="basic-addon1">Descripción</span>
+                            @Html.TextAreaFor(d => d.descripcion_evento, new { @class = "form-control", @type = "text", @placeholder = "Descripcion" })
+                        </div>
+                    </div>
+                </div>
+
+
+
+            </div>
+            <div class="card-footer">
+                <input type="submit" class="btn btn-primary" value="Guardar Evento"/>
+                <a class="btn btn-danger" href="@Url.Content("~/Eventos/ConsultarEventos/")">Descartar Evento</a>
+            </div>
+        </div>
+    </div>
+
+
+}
