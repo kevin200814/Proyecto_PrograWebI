@@ -6,10 +6,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>@ViewBag.Title - Registro de Eventos USAM</title>
     <link href="~/Content/Style.css" rel="stylesheet" />
+    <link href="~/Content/Evento.css" rel="stylesheet" />
+    <link href="~/Content/Asistir.css" rel="stylesheet" />
     <link href="~/Content/bootstrap.css" rel="stylesheet" />
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css">
     <link href="~/Content/dataTables.bootstrap4.min.css" rel="stylesheet" />
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css" integrity="sha256-mmgLkCYLUQbXn0B1SRqzHar6dCnv9oZFPEC1g1cwlkk=" crossorigin="anonymous" />
+
 </head>
 <body>
     <nav class="navbar navbar-dark bg-primary navbar-expand-lg">
@@ -27,7 +31,7 @@
                         <a class="nav-link active" aria-current="page" href="@Url.Content("~/Login/Index")"><i class="bi bi-house-door"></i> Home</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link active" href="@Url.Content("~/Eventos/MyEventos")"><i class="bi bi-calendar-event"></i> Mis Eventos</a>
+                        <a class="nav-link active" href="@Url.Content("~/Eventos/Feed")"><i class="bi bi-calendar-event"></i> Mis Eventos</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link active" href="@Url.Content("~/Eventos/ConsultarEventos")"><i class="bi bi-calendar-event"></i> Panel de Administración</a>
@@ -35,7 +39,7 @@
                     <li class="nav-item dropdown">
                         <a class="nav-link active dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                             <i class="bi bi-person-circle"></i>
-                            @Session["Usr"]  <!--este fragmento hasta que exista el login HttpContext.Current.Session["Usr"].ToString()-->
+                           @Session["Usr"] <!--este fragmento hasta que exista el login HttpContext.Current.Session["Usr"].ToString()-->
                         </a>
                         <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
                             <li>

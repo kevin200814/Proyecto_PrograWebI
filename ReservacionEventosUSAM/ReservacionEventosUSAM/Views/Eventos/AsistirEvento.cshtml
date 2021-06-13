@@ -1,0 +1,67 @@
+﻿@model ReservacionEventosUSAM.Models.CRUD.AsistirEvento
+@{
+    ViewBag.Title = "AsistirEvento";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+
+<main class="my-form">
+    <div class="cotainer">
+        <div class="row justify-content-center">
+            <div class="col-md-8">
+                <div class="card">
+                  <div class="card-header">Datos Personales</div>
+                    <div class="card-body">
+                        @using (Html.BeginForm("RegistrarAsistencia", "Eventos", FormMethod.Post, new { role = "form", @class = "" }))
+                        {
+                            <div class="form-group row">
+                                <label for="full_name" class="col-md-4 col-form-label text-md-right">Nombres</label>
+                                <div class="col-md-6">
+                                    @Html.TextBoxFor(d => d.id_reservacion)
+                                    @Html.TextBoxFor(d => d.nombres_persona, new { @class = "form-control" })
+                                </div>
+                            </div>
+                            <br />
+                            <div class="form-group row">
+                                <label for="full_name" class="col-md-4 col-form-label text-md-right">Apellidos</label>
+                                <div class="col-md-6">
+                                    @Html.TextBoxFor(d => d.apellidos_persona, new { @class = "form-control" })
+                                </div>
+                            </div>
+                            <br />
+                            <div class="form-group row">
+                                <label for="phone_number" class="col-md-4 col-form-label text-md-right">Numero de Telefono:</label>
+                                <div class="col-md-6">
+                                    
+                                    @Html.TextBoxFor(d => d.telefono_persona, new { @class = "form-control" })
+                                </div>
+                            </div>
+                            <br />
+                            <div class="form-group row">
+                                <label for="email_address" class="col-md-4 col-form-label text-md-right">Correo Personal</label>
+                                <div class="col-md-6">
+                                   @Html.TextBoxFor(d => d.correo_persona, new { @class = "form-control" })
+                                </div>
+                            </div>
+                             <br />
+                            
+                            <div class="form-group row">
+                                <label for="present_address" class="col-md-4 col-form-label text-md-right">Tipo Entrada:</label>
+                                <div class="col-md-6">
+                                   @Html.TextBoxFor(d => d.id_tipo_persona, new { @class = "form-control" })
+                                </div>
+                            </div>
+                            <br />
+                            <div class="card-footer">
+                                <input type="submit" class="btn btn-success" value="Guardar" />
+                                <a class="btn btn-danger" href="@Url.Content("~/Eventos/Feed/")">Cancelar</a>
+                            </div>
+                     }
+                </div>
+            </div>
+        </div>
+    </div>
+  
+
+</main>

@@ -10,5 +10,11 @@ namespace ReservacionEventosUSAM.Models.CRUD
         public int id_rol_opera { get; set; }
         public int id_rol { get; set; }
         public int codopera { get; set; }
+
+        /*Tabla roles*/
+        public string  rol { get; set; }
+
+        /*Tabla operaciones*/
+        public string nomopera { get; set; }
     }
 }

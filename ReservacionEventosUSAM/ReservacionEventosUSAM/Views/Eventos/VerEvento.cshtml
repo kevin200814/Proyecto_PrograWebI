@@ -1,0 +1,46 @@
+﻿@model List<ReservacionEventosUSAM.Models.CRUD.EventoDetalle>
+@{
+    ViewBag.Title = "VerEvento";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+
+<div class="page-head_agile_info_w3l"></div><br />
+<h2>Detalle del Evento</h2>
+<br />
+<hr style="height:2px;border-width:0;color:gray;background-color:gray">
+@foreach (var obj in Model)
+{
+           <div class="container">
+            <div class="row">
+                <div class="col-md-5">
+                    <div class="project-info-box mt-0">
+                        <h5>@obj.titulo_evento</h5>
+              
+                        <p class="mb-0">
+                           @obj.descripcion_evento
+                        </p>
+                    </div>
+
+                    <div class="project-info-box">
+                        <p><b>Dirigido:</b> @obj.tipo_persona</p>
+                        <p><b>Fecha de evento:</b> @obj.fecha_evento</p>
+                        <p><b>Encargado:</b> @obj.nombres_persona @obj.apellidos_persona </p>
+                        <p><b>Profesion:</b> @obj.profesion_persona</p>
+                        <p><b>Duracion:</b> @obj.duracion_evento</p>
+                        <p class="mb-0"><b>Costo:</b> <br /> <b>@obj.tipo_personaa:</b> $ @obj.costo_pago_persona </p>
+                     </div>
+                </div>
+
+                <div class="col-md-7">
+                    <img src="../../images/usam.jpg" alt="project-image" class="rounded">
+                    <div class="project-info-box">
+                        <p><b>Lugar:</b> @obj.nombre_local</p>
+                        <p><b>Estado:</b> @obj.estado_evento</p>
+                        <a href="@Url.Content("~/Eventos/AsistirEvento/"+obj.id_reservacion)" class="btn btn-success">Asistir a Evento <i class="bi bi-hand-thumbs-up-fill"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+}

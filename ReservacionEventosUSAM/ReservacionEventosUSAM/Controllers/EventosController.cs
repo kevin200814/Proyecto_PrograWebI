@@ -149,5 +149,78 @@ namespace ReservacionEventosUSAM.Controllers
             db.SaveChanges();
             return Redirect(Url.Content("~/Eventos/ConsultarEventos"));
         }
+
+        
+        public ActionResult Feed()
+        {
+            List<EVENTOvista> list = null;
+            using (ReservacionEventos2021Entities bDatos = new ReservacionEventos2021Entities())
+            {
+                list = (from d in bDatos.reservacion_evento
+                        orderby d.id_reservacion
+                        select new EVENTOvista
+                        {
+                            id_reservacion = d.id_reservacion,
+                            titulo_evento = d.titulo_evento,
+                            fecha_evento = d.fecha_evento,
+                            inicio_hora_evento = d.inicio_hora_evento,
+                            fin_hora_evento = d.fin_hora_evento,
+                            duracion_evento = d.duracion_evento,
+                            descripcion_evento = d.descripcion_evento,
+                            id_tipo_evento = d.id_tipo_evento,
+                            id_persona = d.id_persona,
+                            id_local = d.id_local,
+                            estado_evento = d.estado_evento,
+                            tipo_persona = d.tipo_persona
+                        }).ToList();
+            }
+            return View(list);
+        }
+
+        public ActionResult VerEvento(int? id)
+        {
+            List<EventoDetalle> list = null;
+            using (ReservacionEventos2021Entities bDatos = new ReservacionEventos2021Entities())
+            {
+                list = (from d in bDatos.reservacion_evento
+                        join e in bDatos.persona_eventos on d.id_persona equals e.id_persona
+                        join f in bDatos.local_evento on d.id_local equals f.id_local
+                        orderby d.id_reservacion
+                        where d.id_reservacion == id
+                        select new EventoDetalle
+                        {
+                            id_reservacion = d.id_reservacion,
+                            titulo_evento = d.titulo_evento,
+                            fecha_evento = d.fecha_evento,
+                            inicio_hora_evento = d.inicio_hora_evento,
+                            fin_hora_evento = d.fin_hora_evento,
+                            duracion_evento = d.duracion_evento,
+                            descripcion_evento = d.descripcion_evento,
+                            id_tipo_evento = d.id_tipo_evento,
+                            id_persona = d.id_persona,
+                            id_local = d.id_local,
+                            estado_evento = d.estado_evento,
+                            tipo_persona = d.tipo_persona,
+                            nombres_persona = e.nombres_persona,
+                            apellidos_persona = e.apellidos_persona,
+                            profesion_persona = e.profesion_persona,
+                            nombre_local = f.nombre_local
+
+                            
+                        }).ToList();
+
+               
+
+
+
+            }
+            return View(list);
+
+        }
+
+        public ActionResult AsistirEvento()
+        {
+            return View();
+        }
     }
 }
