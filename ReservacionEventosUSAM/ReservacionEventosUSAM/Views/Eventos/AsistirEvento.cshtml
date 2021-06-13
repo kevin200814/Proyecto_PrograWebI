@@ -1,7 +1,11 @@
 ﻿@model ReservacionEventosUSAM.Models.CRUD.AsistirEvento
+    
 @{
     ViewBag.Title = "AsistirEvento";
     Layout = "~/Views/Shared/_Layout.cshtml";
+    List<SelectListItem> items = (List<SelectListItem>)ViewBag.items;
+
+    List<SelectListItem> items2 = (List<SelectListItem>)ViewBag.items2;
 }
 
 
@@ -13,12 +17,15 @@
                 <div class="card">
                   <div class="card-header">Datos Personales</div>
                     <div class="card-body">
-                        @using (Html.BeginForm("RegistrarAsistencia", "Eventos", FormMethod.Post, new { role = "form", @class = "" }))
+                        @using (Html.BeginForm("AsistirEvento", "Eventos", FormMethod.Post, new { role = "form", @class = "" }))
                         {
+
+                           @Html.DropDownList("id_reservacion", items2, "Seleccionar", new { @class = "form-control" })
                             <div class="form-group row">
                                 <label for="full_name" class="col-md-4 col-form-label text-md-right">Nombres</label>
                                 <div class="col-md-6">
-                                    @Html.TextBoxFor(d => d.id_reservacion)
+                                    <br />
+
                                     @Html.TextBoxFor(d => d.nombres_persona, new { @class = "form-control" })
                                 </div>
                             </div>
@@ -49,7 +56,7 @@
                             <div class="form-group row">
                                 <label for="present_address" class="col-md-4 col-form-label text-md-right">Tipo Entrada:</label>
                                 <div class="col-md-6">
-                                   @Html.TextBoxFor(d => d.id_tipo_persona, new { @class = "form-control" })
+                                   @Html.DropDownList( "id_tipo_persona" , items, "Selecciona", new { @class= "form-control" } )
                                 </div>
                             </div>
                             <br />

@@ -12,6 +12,6 @@ namespace ReservacionEventosUSAM.Models.CRUD
         public string apellidos_persona { get; set; }
         public string telefono_persona { get; set; }
         public string correo_persona { get; set; }
-        public string id_tipo_persona { get; set; }
+        public int id_tipo_persona { get; set; }
     }
 }

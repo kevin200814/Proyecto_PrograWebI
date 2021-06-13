@@ -218,9 +218,84 @@ namespace ReservacionEventosUSAM.Controllers
 
         }
 
+        [HttpPost]
+        public ActionResult AsistirEvento(AsistirEvento modelo)
+        {
+            using (var data = new ReservacionEventos2021Entities())
+            {
+                registro_inscripcion obj = new registro_inscripcion();
+
+
+                obj.id_reservacion = modelo.id_reservacion;
+                obj.nombres_persona = modelo.nombres_persona;
+                obj.apellidos_persona = modelo.apellidos_persona;
+                obj.telefono_persona = modelo.telefono_persona;
+                obj.correo_persona = modelo.correo_persona;
+                obj.id_tipo_persona = modelo.id_tipo_persona;
+
+                data.registro_inscripcion.Add(obj);
+                data.SaveChanges();
+
+            }
+            return Redirect(Url.Content("~/Eventos/Feed"));
+        }
+
         public ActionResult AsistirEvento()
         {
+            List<TipoPresonaSelect> list = null;
+            using (ReservacionEventos2021Entities bDatos = new ReservacionEventos2021Entities())
+            {
+                list = (from d in bDatos.tipo_persona
+                        select new TipoPresonaSelect
+                        {
+                            id_tipo_persona = d.id_tipo_persona,
+                            tipo_persona = d.tipo_persona1,
+
+                        }).ToList();
+            }
+
+            List<SelectListItem> items = list.ConvertAll(d =>
+            {
+                return new SelectListItem()
+                {
+                    Text = d.tipo_persona.ToString(),
+                    Value = d.id_tipo_persona.ToString(),
+                    Selected = false
+                };
+
+            });
+
+            ViewBag.items = items;
+            // return View();
+
+            // select reservacio 
+            List<ReservacionSelect> lst = null;
+
+            using (ReservacionEventos2021Entities Datos = new ReservacionEventos2021Entities())
+            {
+                lst = (from d in Datos.reservacion_evento
+                       select new ReservacionSelect
+                       {
+                           id_reservacion = d.id_reservacion,
+                           titulo_evento = d.titulo_evento,
+
+                       }).ToList();
+            }
+
+            List<SelectListItem> items2 = lst.ConvertAll(d =>
+            {
+                return new SelectListItem()
+                {
+                    Text = d.titulo_evento.ToString(),
+                    Value = d.id_reservacion.ToString(),
+                    Selected = false
+                };
+
+            });
+            ViewBag.items2 = items2;
             return View();
+
         }
+
     }
 }
