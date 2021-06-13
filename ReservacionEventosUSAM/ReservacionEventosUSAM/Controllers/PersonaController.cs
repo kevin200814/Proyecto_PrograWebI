@@ -53,5 +53,11 @@ namespace ReservacionEventosUSAM.Controllers
 
             return Redirect(Url.Content("~/Home/"));
         }
+
+        public ActionResult Salir()
+        {
+            Session.Clear();
+            return RedirectToAction("Index", "Home");
+        }
     }
 }
