@@ -18,7 +18,7 @@
                             <div class="form-group row">
                                 <label for="full_name" class="col-md-4 col-form-label text-md-right">Nombres</label>
                                 <div class="col-md-6">
-                                    @Html.HiddenFor(d => d.id_reservacion)
+                                    @Html.TextBoxFor(d => d.id_reservacion)
                                     @Html.TextBoxFor(d => d.nombres_persona, new { @class = "form-control" })
                                 </div>
                             </div>

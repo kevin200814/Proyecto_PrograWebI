@@ -222,6 +222,7 @@
     <Compile Include="Controllers\LugaresController.cs" />
     <Compile Include="Controllers\ModulosController.cs" />
     <Compile Include="Controllers\OperacionesController.cs" />
+    <Compile Include="Controllers\PersonaController.cs" />
     <Compile Include="Controllers\PersonaEventosController.cs" />
     <Compile Include="Controllers\RegistroPersonasInscripcionController.cs" />
     <Compile Include="Controllers\RegistrosController.cs" />
@@ -323,6 +324,7 @@
       <DependentUpon>BDReservacionEventos.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\CRUD\UsuarioInsert.cs" />
+    <Compile Include="Models\CRUD\UsuarioPassUpdate.cs" />
     <Compile Include="Models\CRUD\usuarios.cs">
       <DependentUpon>BDReservacionEventos.tt</DependentUpon>
     </Compile>
@@ -380,6 +382,7 @@
     <Content Include="Views\Eventos\VerEvento.cshtml" />
     <Content Include="Views\Eventos\AsistirEvento.cshtml" />
     <Content Include="Views\RegistroPersonasInscripcion\MostrarPersonasEvento.cshtml" />
+    <Content Include="Views\Persona\MyProfile.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

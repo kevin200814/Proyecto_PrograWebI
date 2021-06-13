@@ -58,12 +58,16 @@ namespace ReservacionEventosUSAM.Controllers
             using (ReservacionEventos2021Entities bDatos = new ReservacionEventos2021Entities())
             {
                 list = (from d in bDatos.rol_opera
-                        orderby d.id_rol_opera
+                        join e in bDatos.roles on d.id_rol equals e.id_rol
+                        join f in bDatos.operaciones on d.codopera equals f.codopera
+                        orderby d.id_rol_opera 
                         select new ROL_OPERAvista
                         {
                             id_rol_opera = d.id_rol_opera,
                             id_rol = d.id_rol,
-                            codopera = (int)d.codopera
+                            codopera = (int)d.codopera,
+                            rol = e.rol,
+                            nomopera = f.nomopera
                         }).ToList();
             }
             return View(list);

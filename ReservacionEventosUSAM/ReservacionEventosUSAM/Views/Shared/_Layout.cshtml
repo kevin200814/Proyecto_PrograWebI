@@ -39,14 +39,14 @@
                     <li class="nav-item dropdown">
                         <a class="nav-link active dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                             <i class="bi bi-person-circle"></i>
-                            Administrador  <!--este fragmento hasta que exista el login HttpContext.Current.Session["Usr"].ToString()-->
+                           @Session["Usr"] <!--este fragmento hasta que exista el login HttpContext.Current.Session["Usr"].ToString()-->
                         </a>
                         <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
                             <li>
                                 @Html.ActionLink("Salir", "Salir", "CerrarSesion", new { @class = "dropdown-item" })
                             </li>
                             <li><hr class="dropdown-divider"></li>
-                            <li><a class="dropdown-item" href="@Url.Content("~/Persona/MyProfile")">Cambiar contraseña</a></li>
+                            <li><a class="dropdown-item" href='@Url.Content("~/Persona/MyProfile/" + Session["Id"])'>Cambiar contraseña</a></li>
                         </ul>
                     </li>
 
