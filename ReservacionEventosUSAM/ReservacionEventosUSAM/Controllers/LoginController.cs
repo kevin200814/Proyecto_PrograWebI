@@ -41,6 +41,7 @@ namespace ReservacionEventosUSAM.Controllers
                     }
                     else
                     {
+                        Session["Id"] = usr.id_usuario;
                         Session["Usuario"] = usr;
                         Session["Usr"] = user;
                     }

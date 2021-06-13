@@ -1,0 +1,33 @@
+﻿@model ReservacionEventosUSAM.Models.CRUD.UsuarioPassUpdate
+@{
+    ViewBag.Title = "Cambia tu contraseña";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="container">
+    <br />
+    @using (Html.BeginForm("ActualizarMisDatos", "Persona", FormMethod.Post, new { role = "form", @class = "" }))
+    {
+        <div class="card col-md-6">
+            <div class="card-header">
+                <h3 class="card-title">Cambia tu contraseña</h3>
+            </div>
+            <div class="card-body">
+                <div class="col">
+                    @Html.HiddenFor(d => d.id_usuario)
+                    @Html.HiddenFor(d => d.usuario, new { @class = "form-control" })
+                </div>
+                <div class="col">
+                    <label for="contrasena_usuario">Contraseña</label>
+                    @Html.TextBoxFor(d => d.contrasena_usuario, new { @class = "form-control" })
+                </div>
+                @Html.HiddenFor(d => d.cod_estado, new { @class = "form-control" })
+                @Html.HiddenFor(d => d.id_rol, new { @class = "form-control" })
+            </div>
+            <div class="card-footer">
+                <button class="btn btn-success" type="submit">Guardar</button>
+                <a href="@Url.Content("~/Home/")" class="btn btn-danger">Cancelar</a>
+            </div>
+        </div>
+    }
+</div>
