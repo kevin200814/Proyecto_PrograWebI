@@ -223,6 +223,7 @@
     <Compile Include="Controllers\ModulosController.cs" />
     <Compile Include="Controllers\OperacionesController.cs" />
     <Compile Include="Controllers\PersonaEventosController.cs" />
+    <Compile Include="Controllers\RegistroPersonasInscripcionController.cs" />
     <Compile Include="Controllers\RegistrosController.cs" />
     <Compile Include="Controllers\RolesController.cs" />
     <Compile Include="Controllers\RolOperaController.cs" />
@@ -301,6 +302,7 @@
     <Compile Include="Models\CRUD\Rol_OperacrudInsert.cs" />
     <Compile Include="Models\CRUD\Rol_OperacrudUpdate.cs" />
     <Compile Include="Models\CRUD\ROL_OPERAvista.cs" />
+    <Compile Include="Models\CRUD\RPIvista.cs" />
     <Compile Include="Models\CRUD\sysdiagrams.cs">
       <DependentUpon>BDReservacionEventos.tt</DependentUpon>
     </Compile>
@@ -377,6 +379,7 @@
     <Content Include="Views\Usuarios\AgregarUsuarios.cshtml" />
     <Content Include="Views\Eventos\VerEvento.cshtml" />
     <Content Include="Views\Eventos\AsistirEvento.cshtml" />
+    <Content Include="Views\RegistroPersonasInscripcion\MostrarPersonasEvento.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

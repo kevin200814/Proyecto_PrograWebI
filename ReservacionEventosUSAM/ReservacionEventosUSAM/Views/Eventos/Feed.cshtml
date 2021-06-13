@@ -24,6 +24,10 @@
                     <p class="text-success"><b>Fecha de evento:</b> @obj.fecha_evento</p>
                     <p class="float-end"><b>Enfocado a: </b>@obj.tipo_persona</p>
                     <a href="@Url.Content("~/Eventos/VerEvento/"+obj.id_reservacion)" class="btn btn-success">Ver completo <i class="bi bi-eye-fill"></i></a>
+                    @if (Session["Usr"] != null)
+                    {
+                        <a href="@Url.Content("~/RegistroPersonasInscripcion/MostrarPersonasEvento/" + obj.id_reservacion)" class="btn btn-warning">Ver Personas <i class="bi bi-eye-fill"></i></a>
+                    }
                     <a href="#" class="btn btn-primary"><i class="bi bi-hand-thumbs-up-fill"></i></a>
                     <a href="#" class="btn btn-dark"><i class="bi bi-hand-thumbs-down-fill"></i></a>
                 </div>

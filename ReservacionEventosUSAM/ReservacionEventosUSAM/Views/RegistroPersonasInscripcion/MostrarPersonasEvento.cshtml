@@ -1,0 +1,36 @@
+﻿@model List<ReservacionEventosUSAM.Models.CRUD.RPIvista>
+@{
+    ViewBag.Title = "MostrarPersonasEvento";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>MostrarPersonasEvento</h2>
+
+<table id="table" class="table">
+    <thead>
+        <tr>
+            <th scope="col">#</th>
+            <th scope="col">Titulo de Evento</th>
+            <th scope="col">Nombres</th>
+            <th scope="col">Apellidos</th>
+            <th scope="col">Telefono</th>
+            <th scope="col">Correo</th>
+            <th scope="col">Tipo Persona</th>
+        </tr>
+    </thead>
+
+    <tbody>
+        @foreach (var obj in Model)
+        {
+            <tr>
+                <td>@obj.id_inscripcion</td>
+                <td>@obj.titulo_evento</td>
+                <td>@obj.nombres_persona</td>
+                <td>@obj.apellidos_persona</td>
+                <td>@obj.telefono_persona</td>
+                <td>@obj.correo_persona</td>
+                <td>@obj.tipo_persona</td>
+            </tr>
+        }
+    </tbody>
+</table>
