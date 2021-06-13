@@ -127,6 +127,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Content\Asistir.css" />
     <Content Include="Content\bootstrap-grid.css" />
     <Content Include="Content\bootstrap-grid.min.css" />
     <Content Include="Content\bootstrap-grid.rtl.css" />
@@ -143,12 +144,15 @@
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\bootstrap.rtl.css" />
     <Content Include="Content\bootstrap.rtl.min.css" />
+    <Content Include="Content\Evento.css" />
     <Content Include="Content\Site.css" />
     <Content Include="Content\Style.css" />
     <Content Include="Global.asax" />
     <Content Include="images\avatardefault.png" />
+    <Content Include="images\eventos.jpg" />
     <Content Include="images\LOGO_USAM.png" />
     <Content Include="images\señal.png" />
+    <Content Include="images\usam.jpg" />
     <Content Include="Models\CRUD\BDReservacionEventos.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <DependentUpon>BDReservacionEventos.edmx</DependentUpon>
@@ -230,6 +234,7 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Models\CRUD\AsistirEvento.cs" />
     <Compile Include="Models\CRUD\BDReservacionEventos.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -246,6 +251,7 @@
       <DependentUpon>BDReservacionEventos.edmx</DependentUpon>
     </Compile>
     <Compile Include="Models\CRUD\EventocrudInsert.cs" />
+    <Compile Include="Models\CRUD\EventoDetalle.cs" />
     <Compile Include="Models\CRUD\EVENTOvista.cs" />
     <Compile Include="Models\CRUD\LocalcrudInsert.cs" />
     <Compile Include="Models\CRUD\LOCALvista.cs" />
@@ -369,6 +375,8 @@
     <Content Include="Views\TipoEstado\AgregarTipoEstado.cshtml" />
     <Content Include="Views\Usuarios\ActualizarUsuarios.cshtml" />
     <Content Include="Views\Usuarios\AgregarUsuarios.cshtml" />
+    <Content Include="Views\Eventos\VerEvento.cshtml" />
+    <Content Include="Views\Eventos\AsistirEvento.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
